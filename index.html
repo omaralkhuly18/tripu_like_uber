@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link data-rh="true" rel="shortcut icon" type="image/x-icon"
+    href="https://d3i4yxtzktqr9n.cloudfront.net/uber-sites/99c4bc580c8b57b7.ico" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css">
+  <title> Uber-Website-TripU-site </title>
+</head>
+
+<body>
+  <!--Navigation -->
+  <nav class="style_hieght">
+    <div class="container main-nav flex-between">
+
+      <a href="#" class="company-logo logo_white">
+        <img class="img_logo_white" src="Assets/logo.png  " alt="">
+      </a>
+
+      <div class="container_nav_bar">
+        <div class="nav-link-button-center">
+          <ul class="flex-center">
+            <li>
+              <button class="nav-button">
+                Company <i class="fa-solid fa-angle-down"></i>
+              </button>
+            </li>
+            <li><button class="nav-button">Safety</button></li>
+            <li><button class="nav-button">Help</button></li>
+          </ul>
+        </div>
+        <div class="nav-link-button-left">
+          <ul class="flex-center">
+            <li>
+              <button class="nav-button">
+                <i class="fa-solid fa-globe"></i> En
+              </button>
+            </li>
+            <li>
+              <button class="nav-button">
+                <i class="fa-solid fa-braille"></i> Products
+              </button>
+            </li>
+            <li><button class="nav-button">Log in</button></li>
+            <li><button class="nav-button-white">Sign up</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="button_mobile_nav">
+
+        <div class="this_button menu-toggle"  onclick="openNav()">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+      </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <!--Hero Section-->
+  <header>
+    <div class="heroImg" data-aos="fade-up">
+      <div class="container header-section flex">
+        <div class="hero-leftbox-up">
+          <div class="iconbox active">
+            <i class="fa-solid fa-car"></i> <span>Ride</span>
+          </div>
+
+          <div class="iconbox">
+            <i class="fa-solid fa-ranking-star"></i>
+            <span>Drive or deliver</span>
+          </div>
+
+          <div class="iconbox">
+            <i class="fa-solid fa-eraser"></i> <span>Rent your fleet</span>
+          </div>
+        </div>
+        <div class="hero-leftbox-down">
+          <h2>Request a ride now</h2>
+          <input type="text" placeholder="Enter pickup location" />
+          <input type="text" placeholder="Enter destination" />
+          <div class="hero-button">
+            <button class="primary-button">Request now</button>
+            <button class="secondary-button">Schedule for later</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!--GetStarted Section-->
+  <section class="Getstarted-section">
+    <div class="getstarted-bg-img" data-aos="fade-up">
+      <div class="container main-getstarted-content">
+        <h3>The Uber you know, reimagined for business</h3>
+        <p>
+          A platform for managing global rides and meals, and local
+          deliveries, for companies of any size.
+        </p>
+        <button class="primary-button">Get started</button>
+      </div>
+    </div>
+  </section>
+
+  <!--Safety Feature Section-->
+  <section class="safetyfeature-section">
+    <div class="container">
+      <h3 data-aos="zoom-in">Focused on safety, wherever you go</h3>
+      <div class="safetyfeature-container">
+        <div class="safetyfeature-left" data-aos="fade-right">
+          <img src="Assets/Safety1.png" alt="safety1" />
+          <h3>Our commitment to your safety</h3>
+          <p>
+            With every safety feature and every standard in our Community
+            Guidelines, we're committed to helping to create a safe
+            environment for our users.
+          </p>
+          <div class="safety-span">
+            <span>Read about our Community Guidelines</span>
+            <span>See all safety features</span>
+          </div>
+        </div>
+
+        <div class="safetyfeature-right" data-aos="fade-left">
+          <img src="Assets/Safety2.png" alt="safety1" />
+          <h3>Setting 10,000+ cities in motion</h3>
+          <p>
+            The app is available in thousands of cities worldwide, so you can
+            request a ride even when you’re far from home.
+          </p>
+          <span>View all cities</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Feature Section-->
+  <section class="feature-section">
+    <div class="container feature-innercontainer">
+      <div class="featureBox" data-aos="fade-right">
+        <div class="feature-Img">
+          <img src="Assets/Aboutus.png" alt="about-us-img" />
+        </div>
+        <h3>About us</h3>
+        <p>
+          Find out how we started, what drives us, and how we’re reimagining
+          how the world moves.
+        </p>
+        <span>Learn more about Uber</span>
+      </div>
+
+      <div class="featureBox" data-aos="fade-up">
+        <div class="feature-Img">
+          <img src="Assets/paper.png" alt="about-us-img" />
+        </div>
+        <h3>Newsroom</h3>
+        <p>
+          See announcements about our latest releases, initiatives, and
+          partnerships.
+        </p>
+        <span>Go to Newsroom</span>
+      </div>
+
+      <div class="featureBox" data-aos="fade-left">
+        <div class="feature-Img">
+          <img src="Assets/home.png" alt="about-us-img" />
+        </div>
+        <h3>Global citizenship</h3>
+        <p>
+          Read about our commitment to making a positive impact in the cities
+          we serve.
+        </p>
+        <span>See our partnerships</span>
+      </div>
+    </div>
+  </section>
+
+  <!--Ride Section-->
+  <section class="Ride-section" data-aos="fade-up">
+    <div class="container">
+      <h2 data-aos="fade-left">Ride with Uber</h2>
+      <div class="ride-feature-container">
+        <div class="ride-box1" data-aos="fade-right">
+          <div class="ride-img">
+            <img src="Assets/Ride1.png" alt="ride-1" />
+          </div>
+          <div class="ride-content">
+            <h3>Uber Auto</h3>
+            <p>
+              Get affordable Uber Auto rides with no haggling. Request Uber
+              Auto and ride comfortably around your city.
+            </p>
+          </div>
+          <div class="ride-arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+
+        <div class="ride-box1" data-aos="fade-left">
+          <div class="ride-img">
+            <img src="Assets/Ride2.png" alt="ride-2" />
+          </div>
+          <div class="ride-content">
+            <h3>Uber Moto</h3>
+            <p>
+              Get affordable Uber Auto rides with no haggling. Request Uber
+              Auto and ride comfortably around your city.
+            </p>
+          </div>
+          <div class="ride-arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+
+        <div class="ride-box1" data-aos="fade-right">
+          <div class="ride-img">
+            <img src="Assets/Ride3.png" alt="ride-3" />
+          </div>
+          <div class="ride-content">
+            <h3>Uber Rentals</h3>
+            <p>
+              Get affordable Uber Auto rides with no haggling. Request Uber
+              Auto and ride comfortably around your city.
+            </p>
+          </div>
+          <div class="ride-arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+
+        <div class="ride-box1" data-aos="fade-left">
+          <div class="ride-img">
+            <img src="Assets/Ride4.png" alt="ride-4" />
+          </div>
+          <div class="ride-content">
+            <h3>Uber Intercity</h3>
+            <p>
+              Get affordable Uber Auto rides with no haggling. Request Uber
+              Auto and ride comfortably around your city.
+            </p>
+          </div>
+          <div class="ride-arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--QR Section-->
+  <section class="QR-section">
+    <div class="container QR-section-container">
+      <h2 data-aos="fade-right">It’s easier in the apps</h2>
+      <div class="QR-section-InnerContainer">
+        <div class="qr-section-box" data-aos="fade-right">
+          <div class="qr-img">
+            <img src="Assets/QR.png" alt="QR" />
+          </div>
+          <div class="qr-content">
+            <h3>Download the uber app</h3>
+            <p>Scan to download</p>
+          </div>
+          <div class="qr-arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+
+        <div class="qr-section-box" data-aos="fade-left">
+          <div class="qr-img">
+            <img src="Assets/QR.png" alt="QR" />
+          </div>
+          <div class="qr-content">
+            <h3>Download the uber app</h3>
+            <p>Scan to download</p>
+          </div>
+          <div class="qr-arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Sign-Section-->
+  <section class="sign-section" data-aos="fade-up">
+    <div class="container sign-section-container">
+      <div class="sign-box">
+        <h3>Sign up to drive</h3>
+        <div class="sign-arrow">
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+
+      <div class="sign-box">
+        <h3>Sign up to drive</h3>
+        <div class="sign-arrow">
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Footer-section-->
+  <footer>
+    <div class="container footer-section" data-aos="fade-up">
+      <a class="footer-company-logo" href="#">Uber</a>
+      <p class="visit-link">Visit Help Center</p>
+      <div class="footer-links-container">
+        <div class="footer-links">
+          <div class="link-title">Company</div>
+          <p>About us</p>
+          <p>Our offerings</p>
+          <p>Newsroom</p>
+          <p>Investors</p>
+          <p>Blog</p>
+          <p>Careers</p>
+          <p>AI</p>
+          <p>Gift cards</p>
+        </div>
+
+        <div class="footer-links">
+          <div class="link-title">Products</div>
+          <p>About us</p>
+          <p>Our offerings</p>
+          <p>Newsroom</p>
+          <p>Investors</p>
+          <p>Blog</p>
+          <p>Careers</p>
+        </div>
+
+        <div class="footer-links">
+          <div class="link-title">Global citizenship</div>
+          <p>About us</p>
+          <p>Our offerings</p>
+        </div>
+
+        <div class="footer-links">
+          <div class="link-title">Travel</div>
+          <p>About us</p>
+          <p>Our offerings</p>
+          <p>Newsroom</p>
+        </div>
+      </div>
+
+      <div class="social-media">
+        <div class="social-container">
+          <div class="facebook">
+            <i class="fa-brands fa-facebook"></i>
+          </div>
+          <div class="twitter">
+            <i class="fa-brands fa-twitter"></i>
+          </div>
+          <div class="youtube">
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+          <div class="linkdin">
+            <i class="fa-brands fa-linkedin"></i>
+          </div>
+          <div class="Insta">
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+        </div>
+        <div class="lang-button">
+          <button class="nav-button">
+            <i class="fa-solid fa-globe"></i> English
+          </button>
+          <button class="nav-button">
+            <i class="fa-solid fa-location-dot"></i> San Francisco Bay Area
+          </button>
+        </div>
+      </div>
+
+      <div class="social-media">
+        <div class="appstore-container">
+          <div>
+            <img src="Assets/google-play.svg" alt="google-store" />
+          </div>
+
+          <div>
+            <img src="Assets/app-store.svg" alt="app-store" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- mobile menu -->
+  <div id="myNav" class="overlay">
+    <div class="nav_bar_modile_under">
+      <div class="under_mobile">
+        <a href="index.html">
+          <img src="Assets/logo(2).png" alt="">
+        </a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+          <i class="fa-solid fa-circle-xmark" style="color: #ffffff;"></i>
+        </a>
+      </div>
+    </div>
+    <div class="overlay-content">
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+  <!--Font Awesome-->
+  <script src="https://kit.fontawesome.com/21798bf211.js" crossorigin="anonymous"></script>
+
+  <!--Aos-->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="script_tripu.js"></script>
+</body>
+
+</html>
