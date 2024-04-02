@@ -12,53 +12,73 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css">
   <title> Uber-Website-TripU-site </title>
 </head>
+<!-- \\sherif\tripu\website\UberCloneWebsite-HTML-CSS-main -->
 
 <body>
   <!--Navigation -->
   <nav class="style_hieght">
     <div class="container main-nav flex-between">
 
-      <a href="#" class="company-logo logo_white">
+      <a href="test.html" class="company-logo logo_white">
         <img class="img_logo_white" src="Assets/logo.png  " alt="">
       </a>
 
       <div class="container_nav_bar">
         <div class="nav-link-button-center">
-          <ul class="flex-center">
-            <li>
-              <button class="nav-button">
-                Company <i class="fa-solid fa-angle-down"></i>
+          <ul class="flex-center-center">
+            <li class="list_navBar">
+              <button class="nav-button dropbtn" onclick="toggleDropdown()">
+                <span> شركة </span>
+                <i class="fa-solid fa-angle-down style_new"></i>
               </button>
+              <ul id="myDropdown" class="dropdown-content">
+                <li class="list_dropDown"><a class="link_dropDown" id="" href="#">a معلومات عنا </a></li>
+                <li class="list_dropDown"><a class="link_dropDown" id="" href="#"> يعرض </a></li>
+                <li class="list_dropDown"><a class="link_dropDown" id="" href="#">c اتصل بنا </a></li>
+              </ul>
             </li>
-            <li><button class="nav-button">Safety</button></li>
-            <li><button class="nav-button">Help</button></li>
+            <li class="list_navBar">
+              <button class="nav-button"> أمان </button>
+            </li>
+            <li class="list_navBar">
+              <button class="nav-button"> يساعد </button>
+            </li>
           </ul>
         </div>
         <div class="nav-link-button-left">
-          <ul class="flex-center">
-            <li>
+          <ul class="flex-center-left">
+            <li class="list_navBar_left">
               <button class="nav-button">
                 <i class="fa-solid fa-globe"></i> En
               </button>
             </li>
-            <li>
-              <button class="nav-button">
-                <i class="fa-solid fa-braille"></i> Products
+            <li class="list_navBar_left">
+              <button class="nav-button product" onclick="productDropdown()">
+                <i class="fa-solid fa-braille"></i>
+                <span> منتجات </span>
               </button>
+              <ul id="productDropdown" class="dropdown-product">
+                <li class="list_dropDown"><a class="link_dropDown" id="" href="#"> خدمات </a></li>
+                <li class="list_dropDown"><a class="link_dropDown" id="" href="#"> سياسة </a></li>
+              </ul>
             </li>
-            <li><button class="nav-button">Log in</button></li>
-            <li><button class="nav-button-white">Sign up</button></li>
+            <li class="list_navBar_left">
+              <button class="nav-button"> تسجيل الدخول </button>
+            </li>
+            <li class="list_navBar_left">
+              <button class="nav-button-white"> اشتراك </button>
+            </li>
           </ul>
         </div>
       </div>
 
       <div class="button_mobile_nav">
 
-        <div class="this_button menu-toggle"  onclick="openNav()">
+        <div class="this_button menu-toggle" onclick="openNav()">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
-      </div>
+        </div>
       </div>
 
     </div>
@@ -67,31 +87,44 @@
   <!--Hero Section-->
   <header>
     <div class="heroImg" data-aos="fade-up">
-      <div class="container header-section flex">
-        <div class="hero-leftbox-up">
-          <div class="iconbox active">
-            <i class="fa-solid fa-car"></i> <span>Ride</span>
-          </div>
+      <div class="container header-section">
 
-          <div class="iconbox">
-            <i class="fa-solid fa-ranking-star"></i>
-            <span>Drive or deliver</span>
-          </div>
+        <div class="hero-leftbox-down" id="step1">
+          <h2> اطلب رحلة الآن </h2>
+          <form id="step1Form">
+            <input type="text" id="location" placeholder=" أدخل موقع الالتقاط " required/>
+            <input type="text" id="destination" placeholder=" أدخل الوجهة " required/>
+            <div class="hero-button">
+              <button class="primary-button" onclick="validateStep(1)"> اطلب الآن </button>
+              <button class="secondary-button" type="button" onclick="nextStep(3)"> الجدول الزمني في وقت لاحق </button>
+            </div>
+          </form>
+        </div>
+        
+        <div class="hero-leftbox-down" id="step2" style="display: none;">
+          <h2> تحديد والمفاصله للسعر </h2>
+          <form id="step2Form">
+            <input type="number" id="number" placeholder=" أدخل السعر الذي يناسبك " required/>
+            <input type="tel" id="tel" placeholder=" أدخل رقم هاتفك للتواصل.. " required/>
+            <div class="hero-button">
+              <button type="button" class="primary-button" 
+              onclick="prevStep(2)">Previous</button>
+              <button type="button" class="secondary-button" 
+              onclick="validateStep(2)">Next</button>
+            </div>
+          </form>
+        </div>
+        
+        <div class="hero-leftbox-down" id="step3" style="display: none;">
+          <h2> مراجعة معلوماتك </h2>
+          <div id="confirmation"></div>
+          <button type="button" class="primary-button"  onclick="prevStep(3)">Previous</button>
+          <button type="button" class="secondary-button" onclick="submitForm()">Submit</button>
+        </div>
 
-          <div class="iconbox">
-            <i class="fa-solid fa-eraser"></i> <span>Rent your fleet</span>
-          </div>
-        </div>
-        <div class="hero-leftbox-down">
-          <h2>Request a ride now</h2>
-          <input type="text" placeholder="Enter pickup location" />
-          <input type="text" placeholder="Enter destination" />
-          <div class="hero-button">
-            <button class="primary-button">Request now</button>
-            <button class="secondary-button">Schedule for later</button>
-          </div>
-        </div>
       </div>
+
+    </div>
     </div>
   </header>
 
@@ -403,18 +436,61 @@
         </a>
       </div>
     </div>
-    <div class="overlay-content">
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
-    </div>
+    <ul class="overlay-content">
+      <li class="list_mobile_nav">
+        <button class="nav-button menu_mobile" onclick="menuMobileNav()">
+          <span> شركة </span>
+          <i class="fa-solid fa-angle-down style_new"></i>
+        </button>
+        <ul id="dropdownMobile" class="dropdown_content_mobile">
+          <li class="list_dropDown_mobile">
+            <a class="link_dropDown_mobile" id="" href="#"> معلومات عنا </a>
+          </li>
+          <li class="list_dropDown_mobile">
+            <a class="link_dropDown_mobile" id="" href="#"> يعرض </a>
+          </li>
+          <li class="list_dropDown_mobile">
+            <a class="link_dropDown_mobile" id="" href="#"> اتصال نحن </a>
+          </li>
+        </ul>
+      </li>
+      <li class="list_mobile_nav">
+        <button class="nav-button"> أمان </button>
+      </li>
+      <li class="list_mobile_nav">
+        <button class="nav-button"> يساعد </button>
+      </li>
+      <li class="list_mobile_nav">
+        <button class=" nav-button">
+          <i class="fa-solid fa-globe"></i>
+          En
+        </button>
+      </li>
+      <li class="list_mobile_nav">
+        <button class=" nav-button" onclick="listMobileNav()">
+          <i class="fa-solid fa-braille"></i> منتجات
+        </button>
+        <ul id="dropdownMobileList" class="dropdown_product_mobile">
+          <li class="list_dropDown_mobile">
+            <a class="link_dropDown_mobile" id="" href="#"> خدمات </a>
+          </li>
+          <li class="list_dropDown_mobile">
+            <a class="link_dropDown_mobile" id="" href="#"> سياسة </a>
+          </li>
+        </ul>
+      </li>
+      <li class="list_mobile_nav style_button_loreg">
+        <button class=" nav-button"> تسجيل الدخول </button>
+        <button class=" nav-button-white"> اشتراك </button>
+      </li>
+    </ul>
   </div>
 
   <!--Font Awesome-->
   <script src="https://kit.fontawesome.com/21798bf211.js" crossorigin="anonymous"></script>
 
   <!--Aos-->
+  <script src="script_tripu.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
@@ -428,7 +504,6 @@
   <script>
     AOS.init();
   </script>
-  <script src="script_tripu.js"></script>
 </body>
 
 </html>
