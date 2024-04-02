@@ -131,11 +131,15 @@ function validateStep(step) {
 function nextStep(step) {
   document.getElementById('step' + step).style.display = 'none';
   document.getElementById('step' + (step + 1)).style.display = 'block';
-  if (step === 1 || step === 2) {
+  if (step === 1 ) {
     // Display confirmation on step 3
+    window.location.href = 'index.html'
     displayConfirmation();
-  }
+  } else {
+  document.getElementById('step' + (step + 1)).style.display = 'block';
 }
+}
+
 
 function prevStep(step) {
   document.getElementById('step' + step).style.display = 'none';
