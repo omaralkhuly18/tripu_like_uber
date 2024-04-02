@@ -46,17 +46,18 @@
 <script>
   function validateStep(step) {
     if (step === 1) {
-      const location = document.getElementById('location').value;
-      const destination = document.getElementById('destination').value;
-      if (location && destination) {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      if (name && email) {
         nextStep(1);
       } else {
         alert('Please fill in all required fields.');
       }
     } else if (step === 2) {
-      const number = document.getElementById('number').value;
-      const tel = document.getElementById('tel').value;
-      if (number && tel) {
+      const address = document.getElementById('address').value;
+      const city = document.getElementById('city').value;
+      const zip = document.getElementById('zip').value;
+      if (address && city && zip) {
         nextStep(2);
       } else {
         alert('Please fill in all required fields.');
@@ -79,17 +80,19 @@
   }
 
   function displayConfirmation() {
-    const location = document.getElementById('location').value;
-    const destination = document.getElementById('destination').value;
-    const number = document.getElementById('number').value;
-    const tel = document.getElementById('tel').value;
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const address = document.getElementById('address').value;
+    const city = document.getElementById('city').value;
+    const zip = document.getElementById('zip').value;
 
     const confirmationDiv = document.getElementById('confirmation');
     confirmationDiv.innerHTML = `
-      <p>Location: ${location}</p>
-      <p>Destination: ${destination}</p>
-      <p>Your Price Choose: ${number}</p>
-      <p> Your Phone : ${tel}</p>
+      <p>Name: ${name}</p>
+      <p>Email: ${email}</p>
+      <p>Address: ${address}</p>
+      <p>City: ${city}</p>
+      <p>ZIP Code: ${zip}</p>
     `;
   }
 
