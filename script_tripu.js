@@ -1,53 +1,20 @@
 // open and close mobile menu script start
 // تعريف دالة فتح القائمة
 function openNav() {
-  document.getElementById("myNav").style.width = "60%";
-  document.getElementById("myNav").style.left = "40%";
+  document.getElementById("myNav").style.width = "80%";
+  document.getElementById("myNav").style.left = "2  0%";
 }
 
-// تعريف دالة إغلاق القائمة
 function closeNav() {
   document.getElementById("myNav").style.width = "0%";
   document.getElementById("myNav").style.left = "0%";
 }
 
-// تحديد الزر الذي يفتح القائمة
-const openButton = document.getElementById("openButton");
-if (openButton !== null) {
-  openButton.addEventListener("click", openNav);
-}
+// إضافة المستمع للحدث لزر الفتح
+document.getElementById("openButton").addEventListener("click", openNav);
 
-// تحديد الزر الذي يغلق القائمة
-const closeButton = document.getElementById("closeButton");
-if (closeButton !== null) {
-  closeButton.addEventListener("click", closeNav);
-}
-
-// تعريف وسيط الإعلام الذي يستخدم لتعديل حجم القائمة
-const mediaQuery = window.matchMedia("(max-width: 660px) and (min-width: 230px)");
-
-// تعريف دالة تغيير حجم القائمة بناءً على وسيط الإعلام
-function handleMediaChange(mediaQuery) {
-  if (mediaQuery.matches) {
-    document.getElementById("myNav").style.width = "100%";
-    document.getElementById("myNav").style.left = "0%";
-  } else {
-    document.getElementById("myNav").style.width = "60%";
-    document.getElementById("myNav").style.left = "40%";
-  }
-}
-
-// تشغيل دالة تغيير حجم القائمة عند تحميل الصفحة
-handleMediaChange(mediaQuery);
-
-// تفعيل دالة تغيير حجم القائمة عند تغيير وسيط الإعلام
-mediaQuery.addEventListener("change", handleMediaChange);
-
-// دالة تسترجع "resize" لاستخدامها لاحقًا إذا اقتضت الضرورة
-function newFunction() {
-  return "resize";
-}
-
+// إضافة المستمع للحدث لزر الإغلاق
+document.getElementById("closeButton").addEventListener("click", closeNav);
 // open and close mobile menu script end
 
 // dropdown list one script start
@@ -56,10 +23,10 @@ function toggleDropdown() {
   dropdown.classList.toggle("show");
 }
 
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (!event.target.matches('.dropbtn') && !event.target.closest('.dropbtn')) {
     const dropdowns = document.querySelectorAll(".dropdown-content.show");
-    dropdowns.forEach(function(dropdown) {
+    dropdowns.forEach(function (dropdown) {
       dropdown.classList.remove('show');
     });
   }
@@ -73,10 +40,10 @@ function productDropdown() {
   dropMenu.classList.toggle("whatch");
 }
 
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (!event.target.matches('.product') && !event.target.closest('.product')) {
     const dropMenus = document.querySelectorAll(".dropdown-product.whatch");
-    dropMenus.forEach(function(dropMenu) {
+    dropMenus.forEach(function (dropMenu) {
       dropMenu.classList.remove('whatch');
     });
   }
@@ -113,9 +80,10 @@ function validateStep(step) {
     const location = document.getElementById('location').value;
     const destination = document.getElementById('destination').value;
     if (location && destination) {
+      window.location.hash = 'step2Form';
       nextStep(1);
     } else {
-      alert('Please fill in all required fields.');
+      alert(' يرجى ملء جميع الحقول المطلوبة. ');
     }
   } else if (step === 2) {
     const number = document.getElementById('number').value;
@@ -123,27 +91,36 @@ function validateStep(step) {
     if (number && tel) {
       nextStep(2);
     } else {
-      alert('Please fill in all required fields.');
+      alert(' يرجى ملء جميع الحقول المطلوبة. ');
     }
   }
+}
+
+function updateIconStatus(currentStep) {
+  // Remove the 'active' class from all icons
+  for (let i = 1; i <= 3; i++) {
+    document.getElementById('iconbox' + i).classList.remove('active');
+  }
+
+  // Add the 'active' class to the appropriate icon based on the current step
+  document.getElementById('iconbox' + currentStep).classList.add('active');
 }
 
 function nextStep(step) {
   document.getElementById('step' + step).style.display = 'none';
   document.getElementById('step' + (step + 1)).style.display = 'block';
-  if (step === 1 ) {
+  updateIconStatus(step + 1);
+  if (step === 1 || step === 2) {
     // Display confirmation on step 3
-    window.location.href = 'index.html'
     displayConfirmation();
-  } else {
-  document.getElementById('step' + (step + 1)).style.display = 'block';
+    // Set the URL hash to navigate to step 2
+  }
 }
-}
-
 
 function prevStep(step) {
   document.getElementById('step' + step).style.display = 'none';
   document.getElementById('step' + (step - 1)).style.display = 'block';
+  updateIconStatus(step - 1);
 }
 
 function displayConfirmation() {
@@ -156,14 +133,57 @@ function displayConfirmation() {
   confirmationDiv.innerHTML = `
     <p>Location: ${location}</p>
     <p>Destination: ${destination}</p>
-    <p>Your Price Choose: ${number}</p>
+    <p>Your Price Choose: ${number} $</p>
     <p> Your Phone : ${tel}</p>
   `;
 }
 
+
 function submitForm() {
-  // Here you can submit the form data
-  alert('Form submitted successfully!');
+  // Display the modal
+  document.getElementById('myModal').style.display = 'block';
 }
+
+function resetForm() {
+  // Logic to reset the form and return to Step 1
+  document.getElementById('step1').style.display = 'block';
+  document.getElementById('step2').style.display = 'none';
+  document.getElementById('step3').style.display = 'none';
+  document.getElementById('location').value = "";
+  document.getElementById('destination').value = "";
+    // Reset taskbar items to default state
+    const taskbarItems = document.querySelectorAll('.taskbar-item');
+    taskbarItems.forEach(item => {
+      item.classList.remove('active');
+    });
+  
+    // Set the first taskbar item as active
+    const firstTaskbarItem = document.querySelector('.taskbar-item:first-child');
+    firstTaskbarItem.classList.add('active');
+
+  closeModal();
+}
+
+
+function printDetails() {
+  // Implement the logic to print the details here
+  // For demonstration, this will just print the entire window
+  window.print();
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = 'none';
+}
+
+// فتح النافذة المودال
+function openScheduleModal() {
+  document.getElementById('scheduleModal').style.display = 'block';
+}
+
+// إغلاق النافذة المودال
+function closeScheduleModal() {
+  document.getElementById('scheduleModal').style.display = 'none';
+}
+
 
 // step of step script end tripU

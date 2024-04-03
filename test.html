@@ -1,106 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Step-by-Step Form</title>
-<style>
-  /* Add your CSS styles here */
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .tablinks {
+      background-color: #f0f0f0;
+      border: none;
+      cursor: pointer;
+      padding: 10px 20px;
+    }
+
+    .tablinks:hover {
+      background-color: #ddd;
+    }
+  </style>
 </head>
+
 <body>
+  <div class="tabs">
+    <button class="tablinks" onclick="openTab(event, 'step1')">Step 1</button>
+    <button class="tablinks" onclick="openTab(event, 'step2')">Step 2</button>
+    <button class="tablinks" onclick="openTab(event, 'step3')">Step 3</button>
+  </div>
 
-<div id="step1">
-  <h2>Step 1: Personal Information</h2>
-  <form id="step1Form">
-    <label for="name">Name:</label>
-    <input type="text" id="name" required><br><br>
-    <label for="email">Email:</label>
-    <input type="email" id="email" required><br><br>
-    <button type="button" onclick="validateStep(1)">Next</button>
-  </form>
-</div>
+  <div id="step1" class="tabcontent">
+    <h3>Step 1: Form 1</h3>
+    <form id="form1">
+      <input type="text" id="field1" placeholder="Field 1" required>
+      <input type="text" id="field2" placeholder="Field 2" required>
+      <button type="button" onclick="validateStep(1)">Next</button>
+    </form>
+  </div>
 
-<div id="step2" style="display: none;">
-  <h2>Step 2: Address Information</h2>
-  <form id="step2Form">
-    <label for="address">Address:</label>
-    <input type="text" id="address" required><br><br>
-    <label for="city">City:</label>
-    <input type="text" id="city" required><br><br>
-    <label for="zip">ZIP Code:</label>
-    <input type="text" id="zip" required><br><br>
-    <button type="button" onclick="prevStep(2)">Previous</button>
-    <button type="button" onclick="validateStep(2)">Next</button>
-  </form>
-</div>
+  <div id="step2" class="tabcontent" style="display: none;">
+    <h3>Step 2: Form 2</h3>
+    <form id="form2">
+      <input type="text" id="field3" placeholder="Field 3" required>
+      <input type="text" id="field4" placeholder="Field 4" required>
+      <button type="button" onclick="validateStep(2)">Next</button>
+    </form>
+  </div>
 
-<div id="step3" style="display: none;">
-  <h2>Step 3: Confirmation</h2>
-  <p>Please review your information:</p>
-  <div id="confirmation"></div>
-  <button type="button" onclick="prevStep(3)">Previous</button>
-  <button type="button" onclick="submitForm()">Submit</button>
-</div>
+  <div id="step3" class="tabcontent" style="display: none;">
+    <h3>Step 3: Form 3</h3>
+    <form id="form3">
+      <input type="text" id="field5" placeholder="Field 5" required>
+      <input type="text" id="field6" placeholder="Field 6" required>
+      <button type="button" onclick="validateStep(3)">Submit</button>
+    </form>
+  </div>
 
-<script>
-  function validateStep(step) {
-    if (step === 1) {
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      if (name && email) {
-        nextStep(1);
-      } else {
-        alert('Please fill in all required fields.');
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
       }
-    } else if (step === 2) {
-      const address = document.getElementById('address').value;
-      const city = document.getElementById('city').value;
-      const zip = document.getElementById('zip').value;
-      if (address && city && zip) {
-        nextStep(2);
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    function validateStep(step) {
+      var form = document.getElementById('form' + step);
+      if (form.checkValidity()) {
+        nextStep(step);
       } else {
-        alert('Please fill in all required fields.');
+        alert("Please fill in all required fields.");
       }
     }
-  }
 
-  function nextStep(step) {
-    document.getElementById('step' + step).style.display = 'none';
-    document.getElementById('step' + (step + 1)).style.display = 'block';
-    if (step === 1 || step === 2) {
-      // Display confirmation on step 3
-      displayConfirmation();
+    function nextStep(step) {
+      // Logic to navigate to the next step
+      if (step < 3) {
+        openTab(event, 'step' + (step + 1));
+      } else {
+        // Submit the form or perform final step actions
+        alert('Form submitted successfully!');
+      }
     }
-  }
 
-  function prevStep(step) {
-    document.getElementById('step' + step).style.display = 'none';
-    document.getElementById('step' + (step - 1)).style.display = 'block';
-  }
-
-  function displayConfirmation() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const address = document.getElementById('address').value;
-    const city = document.getElementById('city').value;
-    const zip = document.getElementById('zip').value;
-
-    const confirmationDiv = document.getElementById('confirmation');
-    confirmationDiv.innerHTML = `
-      <p>Name: ${name}</p>
-      <p>Email: ${email}</p>
-      <p>Address: ${address}</p>
-      <p>City: ${city}</p>
-      <p>ZIP Code: ${zip}</p>
-    `;
-  }
-
-  function submitForm() {
-    // Here you can submit the form data
-    alert('Form submitted successfully!');
-  }
-</script>
+  </script>
 
 </body>
+
 </html>

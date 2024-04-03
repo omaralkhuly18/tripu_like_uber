@@ -7,8 +7,8 @@
   <link rel="shortcut icon" href="Assets/logo(2).png" type="image/x-icon">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css">
   <title> Uber-Website-TripU-site </title>
 </head>
@@ -19,8 +19,8 @@
   <nav class="style_hieght">
     <div class="container main-nav flex-between">
 
-      <a href="test.html" class="company-logo logo_white">
-        <img class="img_logo_white" src="Assets/logo.png  " alt="">
+      <a href="index.html" class="company-logo logo_white">
+        <img class="img_logo_white" src="Assets/whait logo/512x.png " alt="">
       </a>
 
       <div class="container_nav_bar">
@@ -32,9 +32,9 @@
                 <i class="fa-solid fa-angle-down style_new"></i>
               </button>
               <ul id="myDropdown" class="dropdown-content">
-                <li class="list_dropDown"><a class="link_dropDown" id="" href="#">a معلومات عنا </a></li>
+                <li class="list_dropDown"><a class="link_dropDown" id="" href="#"> معلومات عنا </a></li>
                 <li class="list_dropDown"><a class="link_dropDown" id="" href="#"> يعرض </a></li>
-                <li class="list_dropDown"><a class="link_dropDown" id="" href="#">c اتصل بنا </a></li>
+                <li class="list_dropDown"><a class="link_dropDown" id="" href="#"> اتصل بنا </a></li>
               </ul>
             </li>
             <li class="list_navBar">
@@ -74,7 +74,7 @@
 
       <div class="button_mobile_nav">
 
-        <div class="this_button menu-toggle" onclick="openNav()">
+        <div class="this_button menu-toggle" id="openButton" onclick="openNav()">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
@@ -88,40 +88,106 @@
   <header>
     <div class="heroImg" data-aos="fade-up">
       <div class="container header-section">
+        <div class="hero-leftbox-up">
+
+          <div class="iconbox active taskbar-item" id="iconbox1">
+            <i class="fa-solid fa-car"></i> <span> اطلب مشواراً </span>
+          </div>
+
+          <div class="iconbox taskbar-item" id="iconbox2">
+            <i class="fa-solid fa-ranking-star"></i>
+            <span> أكتب سعرك وسجل للتواصل </span>
+          </div>
+
+          <div class="iconbox taskbar-item" id="iconbox3">
+            <i class="fa-solid fa-eraser"></i> <span> تفاصيل معلوماتك </span>
+          </div>
+
+        </div>
 
         <div class="hero-leftbox-down" id="step1">
           <h2> اطلب رحلة الآن </h2>
-          <form id="step1Form">
-            <input type="text" id="location" placeholder=" أدخل موقع الالتقاط " required/>
-            <input type="text" id="destination" placeholder=" أدخل الوجهة " required/>
+          <form id="step1Form" >
+            <input type="text" id="location" placeholder=" أدخل موقع الالتقاط " required />
+            <input type="text" id="destination" placeholder=" أدخل الوجهة " required />
             <div class="hero-button">
-              <button class="primary-button" onclick="validateStep(1)"> اطلب الآن </button>
-              <button class="secondary-button" type="button" onclick="nextStep(3)"> الجدول الزمني في وقت لاحق </button>
+              <button class="primary-button"  onclick="validateStep(1)"> اطلب الآن </button>
+              <button class="secondary-button" type="button" onclick="openScheduleModal ()"> الجدول الزمني في وقت لاحق
+              </button>
             </div>
           </form>
         </div>
-        
+
         <div class="hero-leftbox-down" id="step2" style="display: none;">
           <h2> تحديد والمفاصله للسعر </h2>
           <form id="step2Form">
-            <input type="number" id="number" placeholder=" أدخل السعر الذي يناسبك " required/>
-            <input type="tel" id="tel" placeholder=" أدخل رقم هاتفك للتواصل.. " required/>
+            <input type="number" id="number" placeholder=" أدخل السعر الذي يناسبك " required />
+            <input type="tel" id="tel" placeholder=" أدخل رقم هاتفك للتواصل.. " required />
             <div class="hero-button">
-              <button type="button" class="primary-button" 
-              onclick="prevStep(2)">Previous</button>
-              <button type="button" class="secondary-button" 
-              onclick="validateStep(2)">Next</button>
+              <button type="button" class="primary-button" onclick="prevStep(2)">Previous</button>
+              <button type="button" class="secondary-button" onclick="validateStep(2)">Next</button>
             </div>
           </form>
         </div>
-        
+
         <div class="hero-leftbox-down" id="step3" style="display: none;">
           <h2> مراجعة معلوماتك </h2>
           <div id="confirmation"></div>
-          <button type="button" class="primary-button"  onclick="prevStep(3)">Previous</button>
-          <button type="button" class="secondary-button" onclick="submitForm()">Submit</button>
+          <div class="hero-button">
+            <button type="button" class="primary-button" onclick="prevStep(3)">Previous</button>
+            <button type="button" class="secondary-button" onclick="submitForm()">Submit</button>
+          </div>
         </div>
 
+      </div>
+
+      <div id="myModal">
+        <div class="alert">
+          <p id="modalText"> في محطة للحافلات! </p>
+          <div class="list_button_alert">
+            <button class="return_button" onclick="resetForm()"> العودة إلى الخطوة 1 </button>
+            <button class="print_button" onclick="printDetails()"> تفاصيل الطباعة </button>
+            <button class="close_button" onclick="closeModal()"> يغلق </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="scheduleModal" class="modal">
+        <div class="modal-content">
+          <span class="close_this" onclick="closeScheduleModal()">&times;</span>
+          <!-- جدول الزمني -->
+          <table class="table_data table-responsive">
+            <thead>
+              <tr>
+                <th>الوقت</th>
+                <th>اليوم</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- أضف هنا مواعيد العمل -->
+              <tr class="style_table_information">
+                <td>9:00 صباحاً - 5:00 مساءً</td>
+                <td> الأحد </td>
+              </tr>
+              <tr class="style_table_information">
+                <td>9:00 صباحاً - 5:00 مساءً</td>
+                <td> الأثنين </td>
+              </tr>
+              <tr class="style_table_information">
+                <td>9:00 صباحاً - 5:00 مساءً</td>
+                <td> الثلاثاء </td>
+              </tr>
+              <tr class="style_table_information">
+                <td>9:00 صباحاً - 5:00 مساءً</td>
+                <td> الأربعاء </td>
+              </tr>
+              <tr class="style_table_information">
+                <td>9:00 صباحاً - 3:00 مساءً</td>
+                <td> الخميس </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
     </div>
@@ -429,9 +495,9 @@
     <div class="nav_bar_modile_under">
       <div class="under_mobile">
         <a href="index.html">
-          <img src="Assets/logo(2).png" alt="">
+          <img src="Assets/whait logo/58x.png" alt="">
         </a>
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+        <a href="javascript:void(0)" class="closebtn" id="closeButton" onclick="closeNav()">
           <i class="fa-solid fa-circle-xmark" style="color: #ffffff;"></i>
         </a>
       </div>
@@ -491,14 +557,11 @@
 
   <!--Aos-->
   <script src="script_tripu.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
     crossorigin="anonymous"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
