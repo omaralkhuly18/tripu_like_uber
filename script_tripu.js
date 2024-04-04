@@ -17,7 +17,7 @@ document.getElementById("openButton").addEventListener("click", openNav);
 document.getElementById("closeButton").addEventListener("click", closeNav);
 // open and close mobile menu script end
 
-// dropdown list one script start
+// dropdown list header one script start
 function toggleDropdown() {
   const dropdown = document.getElementById("myDropdown");
   dropdown.classList.toggle("show");
@@ -32,9 +32,9 @@ window.onclick = function (event) {
   }
 }
 
-// dropdown list one script end
+// dropdown list header one script end
 
-// dropdown list tow script start
+// dropdown list header tow script start
 function productDropdown() {
   const dropMenu = document.getElementById("productDropdown");
   dropMenu.classList.toggle("whatch");
@@ -49,7 +49,7 @@ window.onclick = function (event) {
   }
 }
 
-// dropdown list tow script end
+// dropdown list header tow script end
 
 // dropdown list mobile one script start
 function menuMobileNav() {
@@ -131,10 +131,10 @@ function displayConfirmation() {
 
   const confirmationDiv = document.getElementById('confirmation');
   confirmationDiv.innerHTML = `
-    <p>Location: ${location}</p>
-    <p>Destination: ${destination}</p>
-    <p>Your Price Choose: ${number} $</p>
-    <p> Your Phone : ${tel}</p>
+    <p> الموقع : ${location}</p>
+    <p> الوجهة : ${destination}</p>
+    <p> السعر الذي إخترته الخاص بك  :$ ${number} </p>
+    <p>  هاتفك للتواصل : ${tel}</p>
   `;
 }
 

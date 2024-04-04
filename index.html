@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 
 <head>
   <meta charset="UTF-8" />
@@ -20,7 +20,8 @@
     <div class="container main-nav flex-between">
 
       <a href="index.html" class="company-logo logo_white">
-        <img class="img_logo_white" src="Assets/whait logo/512x.png " alt="">
+        <!-- <img class="img_logo_white" src="Assets/whait logo/512x.png " alt="TripU"> -->
+        <h1 class="text_logo_white" style="color: #ffffff;">TripU</h1>
       </a>
 
       <div class="container_nav_bar">
@@ -87,55 +88,69 @@
   <!--Hero Section-->
   <header>
     <div class="heroImg" data-aos="fade-up">
-      <div class="container header-section">
-        <div class="hero-leftbox-up">
+      <div class="container">
 
-          <div class="iconbox active taskbar-item" id="iconbox1">
-            <i class="fa-solid fa-car"></i> <span> اطلب مشواراً </span>
+        <div class="header-section">
+          <div class="hero-leftbox-up">
+
+            <div class="iconbox active taskbar-item" id="iconbox1">
+              <i class="fa-solid fa-car"></i> <span> اطلب مشواراً </span>
+            </div>
+
+            <div class="iconbox taskbar-item" id="iconbox2">
+              <i class="fa-solid fa-ranking-star"></i>
+              <span> أكتب سعرك وسجل للتواصل </span>
+            </div>
+
+            <div class="iconbox taskbar-item" id="iconbox3">
+              <i class="fa-solid fa-eraser"></i> <span> تفاصيل معلوماتك </span>
+            </div>
+
           </div>
 
-          <div class="iconbox taskbar-item" id="iconbox2">
-            <i class="fa-solid fa-ranking-star"></i>
-            <span> أكتب سعرك وسجل للتواصل </span>
+          <div class="hero-leftbox-down" id="step1">
+            <h2> اطلب رحلة الآن </h2>
+            <form id="step1Form">
+              <input type="text" id="location" placeholder=" أدخل موقع الالتقاط " required />
+              <input type="text" id="destination" placeholder=" أدخل الوجهة " required />
+              <div class="hero-button">
+                <button class="primary-button" onclick="validateStep(1)">
+                  اطلب الآن
+                </button>
+                <button class="secondary-button" type="button" onclick="openScheduleModal ()">
+                  الجدول الزمني في وقت لاحق
+                </button>
+              </div>
+            </form>
           </div>
 
-          <div class="iconbox taskbar-item" id="iconbox3">
-            <i class="fa-solid fa-eraser"></i> <span> تفاصيل معلوماتك </span>
+          <div class="hero-leftbox-down" id="step2" style="display: none;">
+            <h2> تحديد والمفاصله للسعر </h2>
+            <form id="step2Form">
+              <input type="text" id="number" placeholder=" أدخل السعر الذي يناسبك " required />
+              <input type="tel" id="tel" placeholder=" أدخل رقم هاتفك للتواصل.. " required />
+              <div class="hero-button">
+                <button type="button" class="primary-button" onclick="validateStep(2)">
+                  التالي
+                </button>
+                <button type="button" class="secondary-button" onclick="prevStep(2)">
+                  سابق
+                </button>
+              </div>
+            </form>
           </div>
 
-        </div>
-
-        <div class="hero-leftbox-down" id="step1">
-          <h2> اطلب رحلة الآن </h2>
-          <form id="step1Form" >
-            <input type="text" id="location" placeholder=" أدخل موقع الالتقاط " required />
-            <input type="text" id="destination" placeholder=" أدخل الوجهة " required />
+          <div class="hero-leftbox-down" id="step3" style="display: none;">
+            <h2> مراجعة معلوماتك </h2>
+            <div id="confirmation"></div>
             <div class="hero-button">
-              <button class="primary-button"  onclick="validateStep(1)"> اطلب الآن </button>
-              <button class="secondary-button" type="button" onclick="openScheduleModal ()"> الجدول الزمني في وقت لاحق
+              <button type="button" class="primary-button" onclick="submitForm()">
+                يُقدِّم
+              </button>
+              <button type="button" class="secondary-button" onclick="prevStep(3)">
+                سابق
               </button>
             </div>
-          </form>
-        </div>
-
-        <div class="hero-leftbox-down" id="step2" style="display: none;">
-          <h2> تحديد والمفاصله للسعر </h2>
-          <form id="step2Form">
-            <input type="number" id="number" placeholder=" أدخل السعر الذي يناسبك " required />
-            <input type="tel" id="tel" placeholder=" أدخل رقم هاتفك للتواصل.. " required />
-            <div class="hero-button">
-              <button type="button" class="primary-button" onclick="prevStep(2)">Previous</button>
-              <button type="button" class="secondary-button" onclick="validateStep(2)">Next</button>
-            </div>
-          </form>
-        </div>
-
-        <div class="hero-leftbox-down" id="step3" style="display: none;">
-          <h2> مراجعة معلوماتك </h2>
-          <div id="confirmation"></div>
-          <div class="hero-button">
-            <button type="button" class="primary-button" onclick="prevStep(3)">Previous</button>
-            <button type="button" class="secondary-button" onclick="submitForm()">Submit</button>
           </div>
         </div>
 
@@ -145,9 +160,15 @@
         <div class="alert">
           <p id="modalText"> في محطة للحافلات! </p>
           <div class="list_button_alert">
-            <button class="return_button" onclick="resetForm()"> العودة إلى الخطوة 1 </button>
-            <button class="print_button" onclick="printDetails()"> تفاصيل الطباعة </button>
-            <button class="close_button" onclick="closeModal()"> يغلق </button>
+            <button class="return_button" onclick="resetForm()">
+              العودة إلى الخطوة 1
+            </button>
+            <button class="print_button" onclick="printDetails()">
+              تفاصيل الطباعة
+            </button>
+            <button class="close_button" onclick="closeModal()">
+              يغلق
+            </button>
           </div>
         </div>
       </div>
@@ -159,31 +180,55 @@
           <table class="table_data table-responsive">
             <thead>
               <tr>
-                <th>الوقت</th>
-                <th>اليوم</th>
+                <th>
+                  الوقت
+                </th>
+                <th>
+                  اليوم
+                </th>
               </tr>
             </thead>
             <tbody>
               <!-- أضف هنا مواعيد العمل -->
               <tr class="style_table_information">
-                <td>9:00 صباحاً - 5:00 مساءً</td>
-                <td> الأحد </td>
+                <td>
+                  9:00 صباحاً - 5:00 مساءً
+                </td>
+                <td>
+                  الأحد
+                </td>
               </tr>
               <tr class="style_table_information">
-                <td>9:00 صباحاً - 5:00 مساءً</td>
-                <td> الأثنين </td>
+                <td>
+                  9:00 صباحاً - 5:00 مساءً
+                </td>
+                <td>
+                  الأثنين
+                </td>
               </tr>
               <tr class="style_table_information">
-                <td>9:00 صباحاً - 5:00 مساءً</td>
-                <td> الثلاثاء </td>
+                <td>
+                  9:00 صباحاً - 5:00 مساءً
+                </td>
+                <td>
+                  الثلاثاء
+                </td>
               </tr>
               <tr class="style_table_information">
-                <td>9:00 صباحاً - 5:00 مساءً</td>
-                <td> الأربعاء </td>
+                <td>
+                  9:00 صباحاً - 5:00 مساءً
+                </td>
+                <td>
+                  الأربعاء
+                </td>
               </tr>
               <tr class="style_table_information">
-                <td>9:00 صباحاً - 3:00 مساءً</td>
-                <td> الخميس </td>
+                <td>
+                  9:00 صباحاً - 3:00 مساءً
+                </td>
+                <td>
+                  الخميس
+                </td>
               </tr>
             </tbody>
           </table>
@@ -197,13 +242,16 @@
   <!--GetStarted Section-->
   <section class="Getstarted-section">
     <div class="getstarted-bg-img" data-aos="fade-up">
-      <div class="container main-getstarted-content">
-        <h3>The Uber you know, reimagined for business</h3>
-        <p>
-          A platform for managing global rides and meals, and local
-          deliveries, for companies of any size.
-        </p>
-        <button class="primary-button">Get started</button>
+      <div class="container">
+        <div class="main-getstarted-content">
+          <h3> انطلق في مغامرات لا تُنسى مع Tripu واكتشف وجهات جديدة كل يوم. </h3>
+          <p>
+            اختر Tripu لرحلات سيارات وموتوسيكلات مثالية بأفضل الأسعار.
+          </p>
+          <button class="primary-button clip-path">
+            البدء
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -211,30 +259,39 @@
   <!--Safety Feature Section-->
   <section class="safetyfeature-section">
     <div class="container">
-      <h3 data-aos="zoom-in">Focused on safety, wherever you go</h3>
+      <h3 class="text_top_sections" data-aos="zoom-in">
+        التركيز على السلامة أينما ذهبت
+      </h3>
       <div class="safetyfeature-container">
         <div class="safetyfeature-left" data-aos="fade-right">
-          <img src="Assets/Safety1.png" alt="safety1" />
-          <h3>Our commitment to your safety</h3>
+          <img src="Assets/driver3.jpg" alt="safety1" />
+          <h3>
+            تعتبر سلامة المستخدمين لعدم اختيار في تريب يو .
+          </h3>
           <p>
-            With every safety feature and every standard in our Community
-            Guidelines, we're committed to helping to create a safe
-            environment for our users.
-          </p>
+            في تريب يو، نهتم بشكل عام بسلامة مستخدمينا، ونولي يهمنا دائمًا توفير بيئة آمنة وموثوقة لتجارتهم. </p>
           <div class="safety-span">
-            <span>Read about our Community Guidelines</span>
-            <span>See all safety features</span>
+            <a class="link_Ago_pages_one clip-path link_media" href="">
+              اقرأ عن إرشادات مجتمعنا
+            </a>
+            <a class="link_Ago_pages_one clip-path link_media" href="">
+              شاهد جميع ميزات السلامة
+            </a>
           </div>
         </div>
 
         <div class="safetyfeature-right" data-aos="fade-left">
-          <img src="Assets/Safety2.png" alt="safety1" />
-          <h3>Setting 10,000+ cities in motion</h3>
+          <img src="Assets/driver1.jpg" alt="safety1" />
+          <h3>
+            يمكنك القيادة متى شئت، وتحقيق ما تحتاج إليه من دخل
+          </h3>
           <p>
-            The app is available in thousands of cities worldwide, so you can
-            request a ride even when you’re far from home.
+            حقِّق الأرباح بما يناسب مواعيدك من خلال خدمات التوصيل أو إجراء المشاوير، أو الاثنين. يمكنك استخدام سيارتك
+            الخاصة أو اختيار سيارة متاحة للإيجار من خلال تريب يو
           </p>
-          <span>View all cities</span>
+          <a class="link_Ago_pages_one clip-path" href="">
+            عرض جميع المدن
+          </a>
         </div>
       </div>
     </div>
@@ -242,41 +299,67 @@
 
   <!--Feature Section-->
   <section class="feature-section">
-    <div class="container feature-innercontainer">
-      <div class="featureBox" data-aos="fade-right">
-        <div class="feature-Img">
-          <img src="Assets/Aboutus.png" alt="about-us-img" />
-        </div>
-        <h3>About us</h3>
-        <p>
-          Find out how we started, what drives us, and how we’re reimagining
-          how the world moves.
-        </p>
-        <span>Learn more about Uber</span>
-      </div>
+    <div class="container">
 
-      <div class="featureBox" data-aos="fade-up">
-        <div class="feature-Img">
-          <img src="Assets/paper.png" alt="about-us-img" />
-        </div>
-        <h3>Newsroom</h3>
-        <p>
-          See announcements about our latest releases, initiatives, and
-          partnerships.
-        </p>
-        <span>Go to Newsroom</span>
-      </div>
+      <h3 class="text_top_sections" data-aos="zoom-in">
+        تريب يو في ثوبها الجديد لقطاع الأعمال
+      </h3>
 
-      <div class="featureBox" data-aos="fade-left">
-        <div class="feature-Img">
-          <img src="Assets/home.png" alt="about-us-img" />
+      <div class="feature-innercontainer">
+
+        <div class="featureBox" data-aos="fade-right">
+          <div class="cover_taps_one">
+            <div class="feature-Img">
+              <img src="Assets/Aboutus.png" alt="about-us-img" />
+            </div>
+            <h3>
+              نبذه عنا
+            </h3>
+            <p>
+              نعيد تصور الطريقة التي يسير بها العالم نحو الأفضل
+            </p>
+            <a href="" class="link_Ago_pages_tow">
+              تعرف أكثر عن تريب يو
+            </a>
+          </div>
         </div>
-        <h3>Global citizenship</h3>
-        <p>
-          Read about our commitment to making a positive impact in the cities
-          we serve.
-        </p>
-        <span>See our partnerships</span>
+
+        <div class="featureBox" data-aos="fade-up">
+          <div class="cover_taps_one">
+            <div class="feature-Img">
+              <img src="Assets/paper.png" alt="about-us-img" />
+            </div>
+            <h3>
+              غرفة الأخبار
+            </h3>
+            <p>
+              اطلع على الإعلانات حول أحدث إصداراتنا ومبادراتنا و
+              الشراكه.
+            </p>
+            <a href="" class="link_Ago_pages_tow">
+              اذهب إلى غرفة الأخبار
+            </a>
+          </div>
+        </div>
+
+        <div class="featureBox" data-aos="fade-left">
+          <div class="cover_taps_one">
+            <div class="feature-Img">
+              <img src="Assets/home.png" alt="about-us-img" />
+            </div>
+            <h3>
+              المواطنة العالمية
+            </h3>
+            <p>
+              اقرأ عن التزامنا بإحداث تأثير إيجابي في المدن
+              نحن نخدم.
+            </p>
+            <a href="" class="link_Ago_pages_tow">
+              انظر إشتراكاتنا
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -298,7 +381,7 @@
             </p>
           </div>
           <div class="ride-arrow">
-            <i class="fa-solid fa-arrow-right"></i>
+            <i class="fa-solid fa-arrow-right text_rutaet"></i>
           </div>
         </div>
 
@@ -314,7 +397,7 @@
             </p>
           </div>
           <div class="ride-arrow">
-            <i class="fa-solid fa-arrow-right"></i>
+            <i class="fa-solid fa-arrow-right text_rutaet"></i>
           </div>
         </div>
 
@@ -330,7 +413,7 @@
             </p>
           </div>
           <div class="ride-arrow">
-            <i class="fa-solid fa-arrow-right"></i>
+            <i class="fa-solid fa-arrow-right text_rutaet"></i>
           </div>
         </div>
 
@@ -346,7 +429,7 @@
             </p>
           </div>
           <div class="ride-arrow">
-            <i class="fa-solid fa-arrow-right"></i>
+            <i class="fa-solid fa-arrow-right text_rutaet"></i>
           </div>
         </div>
       </div>
@@ -355,32 +438,42 @@
 
   <!--QR Section-->
   <section class="QR-section">
-    <div class="container QR-section-container">
-      <h2 data-aos="fade-right">It’s easier in the apps</h2>
+    <div class="container">
+      <h3 class="text_top_sections" data-aos="fade-right">
+        إنه أسهل في التطبيقات
+      </h3>
       <div class="QR-section-InnerContainer">
         <div class="qr-section-box" data-aos="fade-right">
           <div class="qr-img">
-            <img src="Assets/QR.png" alt="QR" />
+            <img src="Assets/TripU_captian.png" alt="QR" />
           </div>
           <div class="qr-content">
-            <h3>Download the uber app</h3>
-            <p>Scan to download</p>
+            <h3>
+              تنزيل تطبيق تريب يو
+            </h3>
+            <p>
+              امسح الرمز ضوئياً للتنزيل
+            </p>
           </div>
           <div class="qr-arrow">
-            <i class="fa-solid fa-arrow-right"></i>
+            <i class="fa-solid fa-arrow-right text_rutaet"></i>
           </div>
         </div>
 
         <div class="qr-section-box" data-aos="fade-left">
           <div class="qr-img">
-            <img src="Assets/QR.png" alt="QR" />
+            <img src="Assets/TripU_clinte.png" alt="QR" />
           </div>
           <div class="qr-content">
-            <h3>Download the uber app</h3>
-            <p>Scan to download</p>
+            <h3>
+              تنزيل تطبيق تريب يو
+            </h3>
+            <p>
+              امسح الرمز ضوئياً للتنزيل
+            </p>
           </div>
           <div class="qr-arrow">
-            <i class="fa-solid fa-arrow-right"></i>
+            <i class="fa-solid fa-arrow-right text_rutaet"></i>
           </div>
         </div>
       </div>
