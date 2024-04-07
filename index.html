@@ -7,8 +7,7 @@
   <link rel="shortcut icon" href="Assets/logo(2).png" type="image/x-icon">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css">
   <title> Uber-Website-TripU-site </title>
 </head>
@@ -34,7 +33,7 @@
               </button>
               <ul id="myDropdown" class="dropdown-content">
                 <li class="list_dropDown"><a class="link_dropDown" id="" href="#"> معلومات عنا </a></li>
-                <li class="list_dropDown"><a class="link_dropDown" id="" href="#"> يعرض </a></li>
+                <li class="list_dropDown"><a class="link_dropDown" id="" href="#">عروض</a></li>
                 <li class="list_dropDown"><a class="link_dropDown" id="" href="#"> اتصل بنا </a></li>
               </ul>
             </li>
@@ -56,7 +55,7 @@
             <li class="list_navBar_left">
               <button class="nav-button product" onclick="productDropdown()">
                 <i class="fa-solid fa-braille"></i>
-                <span> منتجات </span>
+                <span> معلومات تعريفيه </span>
               </button>
               <ul id="productDropdown" class="dropdown-product">
                 <li class="list_dropDown"><a class="link_dropDown" id="" href="#"> خدمات </a></li>
@@ -462,7 +461,7 @@
       </h3>
       <div class="QR-section-InnerContainer">
 
-        <a href="">
+        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.tripu.tripu&pli=1">
           <div class="qr-section-box" data-aos="fade-right">
             <div class="qr-img">
               <img src="Assets/TripU_captian.png" alt="QR" />
@@ -484,7 +483,7 @@
           </div>
         </a>
 
-        <a href="">
+        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.user.tripu">
           <div class="qr-section-box" data-aos="fade-left">
             <div class="qr-img">
               <img src="Assets/TripU_clinte.png" alt="QR" />
@@ -494,7 +493,7 @@
             </div>
             <div class="qr-content">
               <h3>
-                 تنزيل تطبيق العميل 
+                تنزيل تطبيق العميل
               </h3>
               <p>
                 امسح الرمز ضوئياً للتنزيل
@@ -514,101 +513,109 @@
   <section class="sign-section" data-aos="fade-up">
     <div class="container">
       <div class="sign-section-container">
-        <div class="sign-box">
-          <h3>Sign up to clinte</h3>
-          <div class="sign-arrow">
-            <i class="fa-solid fa-arrow-right"></i>
+        <a href="">
+          <div class="sign-box">
+            <h3>
+              تسجيل الدخول للكابتن
+            </h3>
+            <div class="sign-arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
           </div>
-        </div>
-        <div class="sign-box">
-          <h3>Sign up to drive</h3>
-          <div class="sign-arrow">
-            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="">
+          <div class="sign-box">
+            <h3>
+              تسجيل الدخول للعميل
+            </h3>
+            <div class="sign-arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
 
     </div>
   </section>
 
   <!--Footer-section-->
-  <footer>
-    <div class="container footer-section" data-aos="fade-up">
-      <a class="footer-company-logo" href="#">TripU</a>
-      <p class="visit-link">Visit Help Center</p>
-      <div class="footer-links-container">
-        <div class="footer-links">
-          <div class="link-title">Company</div>
-          <p>About us</p>
-          <p>Our offerings</p>
-          <p>Newsroom</p>
-          <p>Investors</p>
-          <p>Blog</p>
-          <p>Careers</p>
-          <p>AI</p>
-          <p>Gift cards</p>
-        </div>
-
-        <div class="footer-links">
-          <div class="link-title">Products</div>
-          <p>About us</p>
-          <p>Our offerings</p>
-          <p>Newsroom</p>
-          <p>Investors</p>
-          <p>Blog</p>
-          <p>Careers</p>
-        </div>
-
-        <div class="footer-links">
-          <div class="link-title">Global citizenship</div>
-          <p>About us</p>
-          <p>Our offerings</p>
-        </div>
-
-        <div class="footer-links">
-          <div class="link-title">Travel</div>
-          <p>About us</p>
-          <p>Our offerings</p>
-          <p>Newsroom</p>
-        </div>
-      </div>
-
-      <div class="social-media">
-        <div class="social-container">
-          <div class="facebook">
-            <i class="fa-brands fa-facebook"></i>
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+            <div class="logo-widget footer-widget">
+              <figure class="logo-box">
+                <a class="footer-company-logo" href="index.html">TripU</a>
+              </figure>
+              <div class="text">
+                <p> قم بزيارة مركز المساعدة. </p>
+              </div>
+              <ul class="footer-social">
+                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="#"> <i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="#"> <i class="fa-brands fa-instagram"></i></a></li>
+              </ul>
+            </div>
           </div>
-          <div class="twitter">
-            <i class="fa-brands fa-twitter"></i>
+          <div class="col-lg-3 col-md-6 col-sm-12 offset-lg-2 footer-column">
+            <div class="service-widget footer-widget">
+              <div class="footer-title">
+                الشركة
+              </div>
+              <ul class="list">
+                <li><a href="#">
+                    معلومات عنا
+                  </a></li>
+                <li><a href="#">
+                    عروضنا
+                  </a></li>
+                <li><a href="#">
+                    غرفة الأخبار
+                  </a></li>
+                <li><a href="#">
+                    المواطنة العالمية
+                  </a></li>
+                <li><a href="#">
+                    مدونة
+                  </a></li>
+              </ul>
+            </div>
           </div>
-          <div class="youtube">
-            <i class="fa-brands fa-youtube"></i>
-          </div>
-          <div class="linkdin">
-            <i class="fa-brands fa-linkedin"></i>
-          </div>
-          <div class="Insta">
-            <i class="fa-brands fa-instagram"></i>
-          </div>
-        </div>
-        <div class="lang-button">
-          <button class="nav-button">
-            <i class="fa-solid fa-globe"></i> English
-          </button>
-          <button class="nav-button">
-            <i class="fa-solid fa-location-dot"></i> San Francisco Bay Area
-          </button>
-        </div>
-      </div>
-
-      <div class="social-media">
-        <div class="appstore-container">
-          <div>
-            <img src="Assets/google-play.svg" alt="google-store" />
+          <div class="col-lg-3 col-md-6 col-sm-12 footer-widget">
+            <div class="contact-widget footer-widget">
+              <div class="footer-title">
+                معلومات تعريفيه
+              </div>
+              <ul class="list">
+                <li><a href="#">
+                    خدمتنا
+                  </a></li>
+                <li><a href="#">
+                    سياستنا
+                  </a></li>
+                <li><a href="#">
+                    التعريف بالapp
+                  </a></li>
+              </ul>
+            </div>
           </div>
 
-          <div>
-            <img src="Assets/app-store.svg" alt="app-store" />
+          <div class="col-lg-3 col-md-6 col-sm-12 footer-widget">
+            <div class="contact-widget footer-widget">
+              <div class="footer-title">
+                المواطنة العالمية
+              </div>
+              <ul class="list">
+                <li><a href="#">
+                    معلومات عنا
+                  </a></li>
+                <li><a href="#">
+                    عروضنا
+                  </a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -638,10 +645,10 @@
             <a class="link_dropDown_mobile" id="" href="#"> معلومات عنا </a>
           </li>
           <li class="list_dropDown_mobile">
-            <a class="link_dropDown_mobile" id="" href="#"> يعرض </a>
+            <a class="link_dropDown_mobile" id="" href="#">عروض</a>
           </li>
           <li class="list_dropDown_mobile">
-            <a class="link_dropDown_mobile" id="" href="#"> اتصال نحن </a>
+            <a class="link_dropDown_mobile" id="" href="#"> اتصل ينا</a>
           </li>
         </ul>
       </li>
@@ -659,7 +666,7 @@
       </li>
       <li class="list_mobile_nav">
         <button class=" nav-button" onclick="listMobileNav()">
-          <i class="fa-solid fa-braille"></i> منتجات
+          <i class="fa-solid fa-braille"></i> معلومات تعريفيه
         </button>
         <ul id="dropdownMobileList" class="dropdown_product_mobile">
           <li class="list_dropDown_mobile">
