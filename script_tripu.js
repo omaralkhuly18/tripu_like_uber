@@ -75,12 +75,16 @@ function listMobileNav() {
 
 // step of step script start tripU
 
+document.getElementById("myButton").addEventListener("click", function(event){
+  event.preventDefault();
+  validateStep(1);
+});
+
 function validateStep(step) {
   if (step === 1) {
     const location = document.getElementById('location').value;
     const destination = document.getElementById('destination').value;
     if (location && destination) {
-      window.location.hash = 'step2Form';
       nextStep(1);
     } else {
       alert(' يرجى ملء جميع الحقول المطلوبة. ');
@@ -94,16 +98,6 @@ function validateStep(step) {
       alert(' يرجى ملء جميع الحقول المطلوبة. ');
     }
   }
-}
-
-function updateIconStatus(currentStep) {
-  // Remove the 'active' class from all icons
-  for (let i = 1; i <= 3; i++) {
-    document.getElementById('iconbox' + i).classList.remove('active');
-  }
-
-  // Add the 'active' class to the appropriate icon based on the current step
-  document.getElementById('iconbox' + currentStep).classList.add('active');
 }
 
 function nextStep(step) {
@@ -137,6 +131,17 @@ function displayConfirmation() {
     <p>  هاتفك للتواصل : ${tel}</p>
   `;
 }
+
+function updateIconStatus(currentStep) {
+  // Remove the 'active' class from all icons
+  for (let i = 1; i <= 3; i++) {
+    document.getElementById('iconbox' + i).classList.remove('active');
+  }
+
+  // Add the 'active' class to the appropriate icon based on the current step
+  document.getElementById('iconbox' + currentStep).classList.add('active');
+}
+
 
 
 function submitForm() {
