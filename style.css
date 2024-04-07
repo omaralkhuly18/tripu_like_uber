@@ -1495,7 +1495,7 @@ i.text_rutaet {
 }
 
 .sign-box {
-  width: 550px;
+  width: 90%;
   height: 85px;
 
   display: flex;
@@ -1533,6 +1533,7 @@ i.text_rutaet {
 .footer-content{
   position: relative;
   padding: 85px 0px 80px 0px;
+  direction: ltr;
 }
 .footer-content:before{
   position: absolute;
@@ -1564,6 +1565,9 @@ i.text_rutaet {
   -o-animation-duration: 30s;
   -o-animation-iteration-count: infinite;
   -o-animation-timing-function: linear;
+}
+a.footer-company-logo {
+  font-size: 35px;
 }
 .footer-content .logo-widget{
   position: relative;
@@ -1625,10 +1629,15 @@ i.text_rutaet {
   margin-bottom: 15px;
 }
 .footer-content .contact-widget{
-  margin-left: 90px;
+  margin-left: 5px;
 }
 .footer-content .contact-widget .footer-title{
   margin-bottom: 29px;
+}
+
+.text {
+  display: flex;
+  justify-content: start;
 }
 
 /** footer-bottom **/
