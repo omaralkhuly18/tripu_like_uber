@@ -194,46 +194,27 @@ function closeScheduleModal() {
 // step of step script end tripU
 
 // loading script start
-// document.addEventListener("DOMContentLoaded", function() {
-//   const loadWrapp = document.querySelector('.load-wrapp');
+document.addEventListener("DOMContentLoaded", function() {
+  const loadWrapp = document.querySelector('.load-wrapp');
 
-//   function startAnimation() {
-//     loadWrapp.style.display = 'block';
-//     const lines = document.querySelectorAll('.load-3 .line');
-//     lines.forEach((line, index) => {
-//       line.style.animation = `loadingC 0.6s ${index * 0.1}s linear infinite`;
-//     });
-//   }
+  // تشغيل الرسوم المتحركة
+  function startAnimation() {
+    loadWrapp.style.display = 'block';
+    const lines = document.querySelectorAll('.load-3 .line');
+    lines.forEach((line, index) => {
+      line.style.animation = `loadingC 0.6s ${index * 0.1}s linear infinite`;
+    });
+  }
 
-//   function stopAnimation() {
-//     loadWrapp.style.display = 'none';
-//   }
+  // إيقاف الرسوم المتحركة
+  function stopAnimation() {
+    loadWrapp.style.display = 'none';
+  }
 
-//   startAnimation();
+  // استدعاء الوظائف
+  startAnimation();
 
-//   setTimeout(stopAnimation, 5000);
-// });
-// document.addEventListener("DOMContentLoaded", function () {
-//   document.querySelector('.loading-overlay').style.display = 'block';
-
-//   setTimeout(function () {
-//     document.querySelector('.loading-overlay').style.display = 'none';
-//   }, 50000); 
-// });
-
-(function ($) {
-	'use strict';
-
-	function preloader() {
-		if ($('#preloader').length) {
-			$('#preloader').delay(500).fadeOut(900);
-		}
-	}
-	$(window).on('load', function () {
-		preloader();
-
-		new WOW().init();
-	});
-
-})(jQuery);
+  // إيقاف الرسوم المتحركة بعد مرور 5 ثواني
+  setTimeout(stopAnimation, 5000);
+});
 // loading script end
