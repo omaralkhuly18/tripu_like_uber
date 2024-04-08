@@ -73,7 +73,7 @@ function listMobileNav() {
 }
 // drobdown list mobile tow script end
 
-// step of step script start tripU
+// step of step script start tripU start
 
 document.getElementById("myButton").addEventListener("click", function (event) {
   event.preventDefault();
@@ -190,50 +190,37 @@ function closeScheduleModal() {
   document.getElementById('scheduleModal').style.display = 'none';
 }
 
+// step of step script start tripU end
 
-// step of step script end tripU
+// conatct us script start
+function validateForm() {
+  var name = document.forms["contactForm"]["name"].value;
+  var email = document.forms["contactForm"]["email"].value;
+  var message = document.forms["contactForm"]["message"].value;
+  var error = "";
 
-// loading script start
-// document.addEventListener("DOMContentLoaded", function() {
-//   const loadWrapp = document.querySelector('.load-wrapp');
+  if (name == "") {
+      error += "Please enter your name.\n";
+  }
 
-//   function startAnimation() {
-//     loadWrapp.style.display = 'block';
-//     const lines = document.querySelectorAll('.load-3 .line');
-//     lines.forEach((line, index) => {
-//       line.style.animation = `loadingC 0.6s ${index * 0.1}s linear infinite`;
-//     });
-//   }
+  if (email == "") {
+      error += "Please enter your email address.\n";
+  } else if (!validateEmail(email)) {
+      error += "Please enter a valid email address.\n";
+  }
 
-//   function stopAnimation() {
-//     loadWrapp.style.display = 'none';
-//   }
+  if (message == "") {
+      error += "Please enter a message.\n";
+  }
 
-//   startAnimation();
+  if (error != "") {
+      alert(error);
+      return false;
+  }
+}
 
-//   setTimeout(stopAnimation, 5000);
-// });
-// document.addEventListener("DOMContentLoaded", function () {
-//   document.querySelector('.loading-overlay').style.display = 'block';
-
-//   setTimeout(function () {
-//     document.querySelector('.loading-overlay').style.display = 'none';
-//   }, 50000); 
-// });
-
-(function ($) {
-	'use strict';
-
-	function preloader() {
-		if ($('#preloader').length) {
-			$('#preloader').delay(500).fadeOut(900);
-		}
-	}
-	$(window).on('load', function () {
-		preloader();
-
-		new WOW().init();
-	});
-
-})(jQuery);
-// loading script end
+function validateEmail(email) {
+  var re = /\S+@\S+\.\S+/;
+  return re.test(email);
+}
+// conatct us script end

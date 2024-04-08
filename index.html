@@ -7,31 +7,13 @@
   <link rel="shortcut icon" href="Assets/logo(2).png" type="image/x-icon">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style_ar.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css">
   <title> Uber-Website-TripU-site </title>
 </head>
 <!-- \\sherif\tripu\website\UberCloneWebsite-HTML-CSS-main -->
 
 <body>
-  <!-- loading -->
-  <!-- <div class="load-wrapp">
-    <div class="load-3">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
-  </div> -->
-
-  <div class="loading-overlay">
-    <!-- <div class="loading-icon"></div> -->
-    <div class="load-3">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
-  </div>
-
   <!--Navigation -->
   <nav class="style_hieght">
     <div class="container main-nav flex-between">
@@ -50,25 +32,25 @@
                 <i class="fa-solid fa-angle-down style_new"></i>
               </button>
               <ul id="myDropdown" class="dropdown-content">
-                <li class="list_dropDown"><a class="link_dropDown" id="" href="#"> معلومات عنا </a></li>
-                <li class="list_dropDown"><a class="link_dropDown" id="" href="#">عروض</a></li>
-                <li class="list_dropDown"><a class="link_dropDown" id="" href="#"> اتصل بنا </a></li>
+                <li class="list_dropDown"><a class="link_dropDown" id="" href="#about"> معلومات عنا </a></li>
+                <li class="list_dropDown"><a class="link_dropDown" id="" href="#offer">عروض</a></li>
+                <li class="list_dropDown"><a class="link_dropDown" id="" href="#contact"> اتصل بنا </a></li>
               </ul>
             </li>
             <li class="list_navBar">
-              <button class="nav-button"> أمان </button>
+              <a href="#safety"><button class="nav-button"> أمان </button></a>
             </li>
             <li class="list_navBar">
-              <button class="nav-button"> يساعد </button>
+              <a href="#helping"><button class="nav-button"> يساعد </button></a>
             </li>
           </ul>
         </div>
         <div class="nav-link-button-left">
           <ul class="flex-center-left">
             <li class="list_navBar_left">
-              <button class="nav-button">
-                <i class="fa-solid fa-globe"></i> En
-              </button>
+              <a href="home_en.html"> <button class="nav-button">
+                  <i class="fa-solid fa-globe"></i> En
+                </button></a>
             </li>
             <li class="list_navBar_left">
               <button class="nav-button product" onclick="productDropdown()">
@@ -76,15 +58,15 @@
                 <span> معلومات تعريفيه </span>
               </button>
               <ul id="productDropdown" class="dropdown-product">
-                <li class="list_dropDown"><a class="link_dropDown" id="" href="#"> خدمات </a></li>
-                <li class="list_dropDown"><a class="link_dropDown" id="" href="#"> سياسة </a></li>
+                <li class="list_dropDown"><a class="link_dropDown" id="" href="#servier"> خدمات </a></li>
+                <li class="list_dropDown"><a class="link_dropDown" id="" href="policy_user_ar.html"> سياسة </a></li>
               </ul>
             </li>
             <li class="list_navBar_left">
-              <button class="nav-button"> تسجيل الدخول </button>
+              <a href="#autho"><button class="nav-button"> تسجيل الدخول </button></a>
             </li>
             <li class="list_navBar_left">
-              <button class="nav-button-white"> اشتراك </button>
+              <a href="#autho"><button class="nav-button-white"> اشتراك </button></a>
             </li>
           </ul>
         </div>
@@ -257,7 +239,7 @@
   </header>
 
   <!--GetStarted Section-->
-  <section class="Getstarted-section">
+  <section class="Getstarted-section" id="about">
     <div class="getstarted-bg-img" data-aos="fade-up">
       <div class="container">
         <div class="main-getstarted-content">
@@ -274,7 +256,7 @@
   </section>
 
   <!--Safety Feature Section-->
-  <section class="safetyfeature-section">
+  <section class="safetyfeature-section" id="safety">
     <div class="container">
       <h3 class="text_top_sections" data-aos="zoom-in">
         التركيز على السلامة أينما ذهبت
@@ -315,7 +297,7 @@
   </section>
 
   <!--Feature Section-->
-  <section class="feature-section">
+  <section class="feature-section" id="helping">
     <div class="container">
 
       <h3 class="text_top_sections" data-aos="zoom-in">
@@ -381,8 +363,73 @@
     </div>
   </section>
 
+  <!-- offer section -->
+  <section class="offer-section" id="offer">
+    <div class="container">
+
+      <h3 class="text_top_sections" data-aos="zoom-in">
+        يستهدف التطبيق تقديم رحلات عادلة
+      </h3>
+
+      <div class="offer-innercontainer">
+
+        <div class="offerBox" data-aos="fade-right">
+          <div class="cover_taps_one">
+            <div class="offer-Img">
+              <img src="Assets/city_vertical.png" alt="about-us-img" />
+            </div>
+            <h3>
+              رحلات المدينة
+            </h3>
+            <p>
+              اختر سائقاً واعرض أجرتك مقابل الرحلة
+            </p>
+            <a href="" class="link_Ago_pages_tow">
+              تعرف على المزيد
+            </a>
+          </div>
+        </div>
+
+        <div class="offerBox" data-aos="fade-up">
+          <div class="cover_taps_one">
+            <div class="offer-Img">
+              <img src="Assets/freight_delivery_vertical.png" alt="about-us-img" />
+            </div>
+            <h3>
+              نقل وتوصيل الشُحنات
+            </h3>
+            <p>
+              نقل وشحن البضائع بالسعر الذي تحدده
+            </p>
+            <a href="" class="link_Ago_pages_tow">
+              تعرف على المزيد
+            </a>
+          </div>
+        </div>
+
+        <div class="offerBox" data-aos="fade-left">
+          <div class="cover_taps_one">
+            <div class="offer-Img">
+              <img src="Assets/intercity_vertical.png" alt="about-us-img" />
+            </div>
+            <h3>
+              سفر
+            </h3>
+            <p>
+              سافر من مدينة إلى مدينة أخرى بسعر من اختيارك
+            </p>
+            <a href="" class="link_Ago_pages_tow">
+              تعرف على المزيد
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!--Ride Section-->
-  <section class="Ride-section" data-aos="fade-up">
+  <section class="Ride-section" data-aos="fade-up" id="servier">
     <div class="container">
       <h2 data-aos="fade-left" class="zoom-in">
         في TripU، نعتقد أن كل رحلة يجب أن تكون ليس فقط مغامرة مثيرة بل أيضاً تجربة آمنة ومطمئنة.
@@ -471,6 +518,29 @@
     </div>
   </section>
 
+  <!-- conatct us -->
+  <section class="Contact-section" id="contact">
+    <div class="container">
+      <h2 class="zoom-in" data-aos="fade-left">
+        إتصل بنا
+      </h2>
+      <div class="conatct-feature-section">
+        <form class="form_conatct">
+          <label class="label_conatct" for="name"> الإسم :</label>
+          <input class="input_name" type="text" id="name" name="name" required>
+
+          <label class="label_conatct" for="email"> الإيميل :</label>
+          <input class="input_email" type="email" id="email" name="email" required>
+
+          <label class="label_conatct" for="message"> الرساله الخاصه :</label>
+          <textarea class="url_message" id="message" name="message" required></textarea>
+
+          <a href="" onclick="validateForm()" class="input_buuton clip-path" type="submit"> أرسل </a>
+        </form>
+
+      </div>
+    </div>
+  </section>
   <!--QR Section-->
   <section class="QR-section">
     <div class="container">
@@ -528,7 +598,7 @@
   </section>
 
   <!--Sign-Section-->
-  <section class="sign-section" data-aos="fade-up">
+  <section class="sign-section" data-aos="fade-up" id="autho">
     <div class="container">
       <div class="sign-section-container">
         <a href="">
@@ -537,7 +607,7 @@
               تسجيل الدخول للكابتن
             </h3>
             <div class="sign-arrow">
-              <i class="fa-solid fa-arrow-right"></i>
+              <i class="fa-solid fa-arrow-right text_rutaet"></i>
             </div>
           </div>
         </a>
@@ -547,7 +617,7 @@
               تسجيل الدخول للعميل
             </h3>
             <div class="sign-arrow">
-              <i class="fa-solid fa-arrow-right"></i>
+              <i class="fa-solid fa-arrow-right text_rutaet"></i>
             </div>
           </div>
         </a>
@@ -567,7 +637,10 @@
                 <a class="footer-company-logo" href="index.html">TripU</a>
               </figure>
               <div class="text">
-                <p> .قم بزيارة مركز المساعدة </p>
+                <p class="text_footer"> .قم بزيارة مركز المساعدة </p>
+                <span class="span_footer">
+                  <a href="home_en.html"><i class="fa-solid fa-globe"></i> En</a>
+                </span>
               </div>
               <ul class="footer-social">
                 <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
@@ -583,19 +656,19 @@
                 الشركة
               </div>
               <ul class="list">
-                <li><a href="#">
+                <li><a href="#about">
                     معلومات عنا
                   </a></li>
-                <li><a href="#">
+                <li><a href="#offer">
                     عروضنا
                   </a></li>
-                <li><a href="#">
+                <li><a href="roomnews_ar.html">
                     غرفة الأخبار
                   </a></li>
-                <li><a href="#">
+                <li><a href="page_global_ar.html">
                     المواطنة العالمية
                   </a></li>
-                <li><a href="#">
+                <li><a href="faq_ar.html">
                     مدونة
                   </a></li>
               </ul>
@@ -607,13 +680,13 @@
                 معلومات تعريفيه
               </div>
               <ul class="list">
-                <li><a href="#">
+                <li><a href="#servier">
                     خدمتنا
                   </a></li>
-                <li><a href="#">
+                <li><a href="policy_user_ar.html">
                     سياستنا
                   </a></li>
-                <li><a href="#">
+                <li><a href="usedApp_ar.html">
                     التعريف بالapp
                   </a></li>
               </ul>
@@ -625,10 +698,10 @@
                 المواطنة العالمية
               </div>
               <ul class="list">
-                <li><a href="#">
+                <li><a href="#about">
                     معلومات عنا
                   </a></li>
-                <li><a href="#">
+                <li><a href="#offer">
                     عروضنا
                   </a></li>
               </ul>
@@ -645,10 +718,10 @@
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12 column">
             <ul class="footer-nav">
-              <li><a href="#">
+              <li><a href="policy_ar.html">
                   شروط الخدمة
                 </a></li>
-              <li><a href="#">
+              <li><a href="policy_ar.html">
                   سياسة الخصوصية
                 </a></li>
             </ul>
@@ -679,27 +752,27 @@
         </button>
         <ul id="dropdownMobile" class="dropdown_content_mobile">
           <li class="list_dropDown_mobile">
-            <a class="link_dropDown_mobile" id="" href="#"> معلومات عنا </a>
+            <a class="link_dropDown_mobile" id="" href="#about"> معلومات عنا </a>
           </li>
           <li class="list_dropDown_mobile">
-            <a class="link_dropDown_mobile" id="" href="#">عروض</a>
+            <a class="link_dropDown_mobile" id="" href="#offer">عروض</a>
           </li>
           <li class="list_dropDown_mobile">
-            <a class="link_dropDown_mobile" id="" href="#"> اتصل ينا</a>
+            <a class="link_dropDown_mobile" id="" href="#contact"> اتصل بنا</a>
           </li>
         </ul>
       </li>
       <li class="list_mobile_nav">
-        <button class="nav-button"> أمان </button>
+        <a href="#safety"><button class="nav-button"> أمان </button></a>
       </li>
       <li class="list_mobile_nav">
-        <button class="nav-button"> يساعد </button>
+        <a href="#helping"><button class="nav-button"> يساعد </button></a>
       </li>
       <li class="list_mobile_nav">
-        <button class=" nav-button">
-          <i class="fa-solid fa-globe"></i>
-          En
-        </button>
+        <a href="home_en.html"> <button class=" nav-button">
+            <i class="fa-solid fa-globe"></i>
+            En
+          </button></a>
       </li>
       <li class="list_mobile_nav">
         <button class=" nav-button" onclick="listMobileNav()">
@@ -707,16 +780,16 @@
         </button>
         <ul id="dropdownMobileList" class="dropdown_product_mobile">
           <li class="list_dropDown_mobile">
-            <a class="link_dropDown_mobile" id="" href="#"> خدمات </a>
+            <a class="link_dropDown_mobile" id="" href="#servier"> خدمات </a>
           </li>
           <li class="list_dropDown_mobile">
-            <a class="link_dropDown_mobile" id="" href="#"> سياسة </a>
+            <a class="link_dropDown_mobile" id="" href="policy_user_ar.html"> سياسة </a>
           </li>
         </ul>
       </li>
       <li class="list_mobile_nav style_button_loreg">
-        <button class=" nav-button"> تسجيل الدخول </button>
-        <button class=" nav-button-white"> اشتراك </button>
+        <a href="#autho"><button class=" nav-button"> تسجيل الدخول </button></a>
+        <a href="#autho"><button class=" nav-button-white"> اشتراك </button></a>
       </li>
     </ul>
   </div>
@@ -726,11 +799,6 @@
 
   <!--Aos-->
   <script src="js/script_tripu.js"></script>
-  <script src="js/jquery-1.12.4.min.js"></script>
-  <script src="js/jquery.easypiechart.min.js"></script>
-  <script src="js/jquery.inview.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/jquery.syotimer.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
