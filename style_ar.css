@@ -27,7 +27,7 @@ input {
 }
 
 input[type="text"],
-label{
+label {
     text-align: right;
 }
 
@@ -43,6 +43,14 @@ i.text_rutaet {
     transform: rotate(180deg);
 }
 
+.main-footer{
+    direction: ltr;
+}
+
+.dir_right{
+    text-align: right;
+}
+
 .footer-bottom .footer-nav {
     text-align: right;
 }
@@ -50,4 +58,14 @@ i.text_rutaet {
 .footer-content {
     /* direction: ltr; */
     width: 100%;
+}
+
+.data_about i,
+.language i {
+    margin-right: 10%;
+}
+
+.data_about_mobile i,
+.language_mobile i{
+    margin-right: 2%;
 }
