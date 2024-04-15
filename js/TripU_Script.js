@@ -87,7 +87,7 @@ function validateStep(step) {
     if (location && destination) {
       nextStep(1);
     } else {
-      alert(' يرجى ملء جميع الحقول المطلوبة. ');
+      alert('Please fill out all required fields. ');
     }
   } else if (step === 2) {
     const number = document.getElementById('number').value;
@@ -95,7 +95,7 @@ function validateStep(step) {
     if (number && tel) {
       nextStep(2);
     } else {
-      alert(' يرجى ملء جميع الحقول المطلوبة. ');
+      alert(' Please fill out all required fields.');
     }
   }
 }
@@ -125,10 +125,10 @@ function displayConfirmation() {
 
   const confirmationDiv = document.getElementById('confirmation');
   confirmationDiv.innerHTML = `
-    <p> الموقع : ${location}</p>
-    <p> الوجهة : ${destination}</p>
-    <p> السعر الذي إخترته الخاص بك  :$ ${number} </p>
-    <p>  هاتفك للتواصل : ${tel}</p>
+    <p> the site : ${location}</p>
+    <p> Destination : ${destination}</p>
+    <p> Your chosen price : ${number} $</p>
+    <p>  Your phone for communication: ${tel}</p>
   `;
 }
 
@@ -205,11 +205,11 @@ form.addEventListener("submit", function(event) {
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (!emailPattern.test(email)) {
-    alert("صيغة البريد الإلكتروني غير صحيحة");
+    alert("Invalid email format");
     return;
   }
 
-  alert("تم إرسال النموذج بنجاح");
+  alert("Form sent successfully");
 });
 
 // form contactUS script end

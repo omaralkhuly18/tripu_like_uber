@@ -393,13 +393,19 @@ input[type="text"] {
 
 @media screen and (max-width: 993px) and (min-width: 768px) {
 
-  .img_logo_white,
-  .text_logo_white {
+  .img_logo_white {
     width: 60% !important;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
+  /* .text_logo_white {
+    width: 60% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
 
   .header-section {
     width: 80% !important;
@@ -421,18 +427,24 @@ input[type="text"] {
 
 @media screen and (max-width: 659px) and (min-width: 576px) {
 
-  .img_logo_white,
-  .text_logo_white {
+  .img_logo_white {
     width: 80% !important;
   }
+
+  /* .text_logo_white {
+    width: 80% !important;
+  } */
 }
 
 @media screen and (max-width: 575px) and (min-width: 490px) {
 
-  .img_logo_white,
-  .text_logo_white {
+  .img_logo_white {
     width: 65% !important;
   }
+
+  /* .text_logo_white {
+    width: 65% !important;
+  } */
 
 }
 
