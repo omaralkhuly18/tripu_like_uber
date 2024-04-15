@@ -193,28 +193,23 @@ function closeScheduleModal() {
 
 // step of step script end tripU
 
-// loading script start
-document.addEventListener("DOMContentLoaded", function() {
-  const loadWrapp = document.querySelector('.load-wrapp');
 
-  // تشغيل الرسوم المتحركة
-  function startAnimation() {
-    loadWrapp.style.display = 'block';
-    const lines = document.querySelectorAll('.load-3 .line');
-    lines.forEach((line, index) => {
-      line.style.animation = `loadingC 0.6s ${index * 0.1}s linear infinite`;
-    });
+// form contactUS script start
+
+const form = document.getElementById("form");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const email = document.getElementById("email").value;
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailPattern.test(email)) {
+    alert("صيغة البريد الإلكتروني غير صحيحة");
+    return;
   }
 
-  // إيقاف الرسوم المتحركة
-  function stopAnimation() {
-    loadWrapp.style.display = 'none';
-  }
-
-  // استدعاء الوظائف
-  startAnimation();
-
-  // إيقاف الرسوم المتحركة بعد مرور 5 ثواني
-  setTimeout(stopAnimation, 5000);
+  alert("تم إرسال النموذج بنجاح");
 });
-// loading script end
+
+// form contactUS script end
