@@ -15,7 +15,7 @@ body[data-aos-delay="50"] [data-aos].aos-animate {
 
 [data-aos][data-aos][data-aos-duration="100"],
 body[data-aos-duration="100"] [data-aos] {
-    transition-duration: .1s
+    transition-duration: .2s
 }
 
 [data-aos][data-aos][data-aos-delay="100"],
@@ -55,7 +55,7 @@ body[data-aos-delay="200"] [data-aos] {
 
 [data-aos][data-aos][data-aos-delay="200"].aos-animate,
 body[data-aos-delay="200"] [data-aos].aos-animate {
-    transition-delay: .2s
+    transition-delay: .2s;
 }
 
 [data-aos][data-aos][data-aos-duration="250"],
