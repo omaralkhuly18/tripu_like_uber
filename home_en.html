@@ -855,7 +855,10 @@
         crossorigin="anonymous"></script>
     <script src="../Uber-Website-TripU-site/assets/js/aos_js.js"></script>
     <script>
-        AOS.init();
+        // تهيئة مكتبة AOS عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init();
+        });
     </script>
 </body>
 
