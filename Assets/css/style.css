@@ -1880,8 +1880,24 @@ img.before_style::before {
   color: #d9c6d3;
 }
 
-/*Footer*/
 
+/* policy style */
+
+.tabs_policy{
+  padding: 5% 0;
+}
+
+.addrees {
+  padding: 2% 0;
+}
+
+a.contanier_tabs {
+  width: 30% !important;
+  color: black !important;
+}
+
+
+/*Footer*/
 .main-footer {
   position: relative;
   background: #1e2129;

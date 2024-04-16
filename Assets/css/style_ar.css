@@ -48,6 +48,12 @@ i.text_rutaet {
     transform: rotate(180deg);
 }
 
+/* policy style */
+
+a.contanier_tabs {
+    text-align: start;
+}
+
 .main-footer{
     direction: ltr;
 }
@@ -55,7 +61,6 @@ i.text_rutaet {
 .dir_right{
     text-align: right;
 }
-
 .footer-bottom .footer-nav {
     text-align: right;
 }
