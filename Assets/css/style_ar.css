@@ -31,6 +31,11 @@ label {
     text-align: right;
 }
 
+.dropdown_content_mobile,
+.dropdown_product_mobile {
+  text-align: right;
+}
+
 .close_this {
     text-align: right;
 }
