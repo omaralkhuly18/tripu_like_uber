@@ -54,6 +54,10 @@ a.contanier_tabs {
     text-align: start;
 }
 
+div.tab-content {
+    text-align: start;
+}
+
 .main-footer{
     direction: ltr;
 }

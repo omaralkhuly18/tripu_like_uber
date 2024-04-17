@@ -75,9 +75,14 @@ function listMobileNav() {
 
 // step of step script start tripU
 
-document.getElementById("myButton").addEventListener("click", function (event) {
-  event.preventDefault();
-  validateStep(1);
+window.addEventListener("DOMContentLoaded", (event) => {
+  let answer = document.getElementById("myButton");
+  if (answer) {
+    answer.addEventListener("click", function (event) {
+      event.preventDefault();
+      validateStep(1);
+    });
+  }
 });
 
 function validateStep(step) {
@@ -196,20 +201,26 @@ function closeScheduleModal() {
 
 // form contactUS script start
 
-const form = document.getElementById("form");
+window.addEventListener("DOMContentLoaded", (event) => {
+  const form = document.getElementById("form");
+  if (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
 
-form.addEventListener("submit", function(event) {
-  event.preventDefault();
+      const email = document.getElementById("email").value;
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  const email = document.getElementById("email").value;
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+       alert("Invalid email format");
+        return;
+      }
 
-  if (!emailPattern.test(email)) {
-    alert("Invalid email format");
-    return;
+      alert("Form sent successfully");
+    });
+
   }
-
-  alert("Form sent successfully");
 });
 
 // form contactUS script end
+
+

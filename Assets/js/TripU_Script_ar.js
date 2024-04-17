@@ -20,14 +20,14 @@ document.getElementById("closeButton").addEventListener("click", closeNav);
 // dropdown list header one script start
 function toggleDropdown() {
   const dropdown = document.getElementById("myDropdown");
-  dropdown.classList.toggle("show");
+  dropdown.classList.toggle("shows");
 }
 
 window.onclick = function (event) {
   if (!event.target.matches('.dropbtn') && !event.target.closest('.dropbtn')) {
-    const dropdowns = document.querySelectorAll(".dropdown-content.show");
+    const dropdowns = document.querySelectorAll(".dropdown-content.shows");
     dropdowns.forEach(function (dropdown) {
-      dropdown.classList.remove('show');
+      dropdown.classList.remove('shows');
     });
   }
 }
@@ -206,22 +206,20 @@ window.addEventListener("DOMContentLoaded", (event) => {
   if (form) {
     form.addEventListener("submit", function (event) {
       event.preventDefault();
-    
+
       const email = document.getElementById("email").value;
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
+
       if (!emailPattern.test(email)) {
         alert("صيغة البريد الإلكتروني غير صحيحة");
         return;
       }
-    
+
       alert("تم إرسال النموذج بنجاح");
     });
-    
+
   }
 });
 
-
-
-
 // form contactUS script end
+
