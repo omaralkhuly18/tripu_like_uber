@@ -372,14 +372,21 @@ input[type="text"] {
   }
 
   .feature-innercontainer,
-  .offer-innercontainer {
+  .offer-innercontainer,
+  .caption-innercontainer {
     display: block !important;
   }
 
   .featureBox,
-  .offerBox {
+  .offerBox,
+  .captionBox {
     width: 100% !important;
     margin-bottom: 3%;
+  }
+
+  .captionBox .cover_taps_one h3{
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   .ride-box1 {
@@ -403,6 +410,14 @@ input[type="text"] {
 
   a.contanier_tabs{
     width: 50% !important;
+  }
+
+  .autho_caption{
+    width: 20% !important;
+  }
+
+  .link_authorization{
+    width: 70% !important;
   }
 
 }
@@ -2075,6 +2090,45 @@ span.span_footer {
   color: cornflowerblue !important;
 }
 
+
+/* authorization */
+
+section.authorization_section {
+  padding: 5% 0 5%;
+}
+
+.linkauthorization span {
+  margin: 4% 0;
+  font-size: 20px;
+  display: block;
+}
+
+.link_authorization{
+  background-color: cornflowerblue;
+  width: 20%;
+  height: 60px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.nav-pills .nav-link {
+  background: 0 0;
+  border: 0;
+  border-radius: var(--bs-nav-pills-border-radius);
+}
+
+@media screen and (max-width: 545px) and (min-width: 230px){
+  .linkauthorization{
+    text-align: center;
+  }
+  .link_authorization{
+    width: 100% !important;
+  }
+}
+
 /* caption policy */
 
 .header-section {
@@ -2087,7 +2141,6 @@ span.span_footer {
 }
 
 .heroCaptionImg {
-  background-image: url(../image/arabic/web.._8aced50d5e.png);
   width: 100%;
   height: 712px;
   background-size: cover;
@@ -2096,15 +2149,40 @@ span.span_footer {
   position: relative;
 }
 
-@media screen and (max-width: 1256px) and (min-width: 768px) {
+.heroCaptionImg {
+  background-image: url(../image/arabic/web.._new.png);
+}
+
+@media screen and (max-width: 1261px) and (min-width: 1032px) {
   .heroCaptionImg {
-    background-image: url(../image/arabic/mobile_8aced50d5e.png) !important;
+      background-image: url(../image/arabic/web-export-new.png) !important;
+      background-position: left !important;
   }
 }
 
-@media screen and (max-width: 767px) and (min-width: 650px) {
+@media screen and (max-width: 1031px) and (min-width: 987px) {
   .heroCaptionImg {
-    background-image: url(../image/arabic/tablet_8aced50d5e.png) !important;
+      background-image: url(../image/arabic/tablet-export-new.png) !important;
+  }
+}
+
+@media screen and (max-width: 986px) and (min-width: 600px) {
+  .heroCaptionImg {
+      background-image: url(../image/arabic/mobile_newpng.png) !important;
+  }
+}
+
+@media screen and (max-width: 599px) and (min-width: 300px) {
+  .heroCaptionImg {
+      background-image: url(../image/arabic/mobile_new.png) !important;
+      background-position: right !important;
+  }
+}
+
+@media screen and (max-width: 590px) and (min-width: 300px) {
+  .heroCaptionImg {
+      background-image: url(../image/arabic/mobile_img_new.png) !important;
+      /* background-position: right !important; */
   }
 }
 
@@ -2126,6 +2204,24 @@ span.span_footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media screen and (max-width: 765px) and (min-width: 500px){
+  .autho_caption{
+    width: 30% !important;
+  }
+}
+
+@media screen and (max-width: 499px) and (min-width: 290px){
+  .autho_caption{
+    width: 50% !important;
+  }
+}
+
+@media screen and (max-width: 289px) and (min-width: 230px){
+  .autho_caption{
+    width: 90% !important;
+  }
 }
 
 .caption_autho{

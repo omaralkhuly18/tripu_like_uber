@@ -223,3 +223,23 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
 // form contactUS script end
 
+// transform rotate
+
+const loginText = document.querySelector(".title-text .login");
+const loginForm = document.querySelector("form.login");
+const loginBtn = document.querySelector("label.login");
+const signupBtn = document.querySelector("label.signup");
+const signupLink = document.querySelector("form .signup-link a");
+signupBtn.onclick = (()=>{
+  loginForm.style.marginRight = "-50%";
+  loginText.style.marginRight = "-50%";
+});
+loginBtn.onclick = (()=>{
+  loginForm.style.marginRight = "0%";
+  loginText.style.marginRight = "0%";
+});
+signupLink.onclick = (()=>{
+  signupBtn.click();
+  return false;
+});
+

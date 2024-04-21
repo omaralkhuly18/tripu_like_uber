@@ -33,7 +33,7 @@ label {
 
 .dropdown_content_mobile,
 .dropdown_product_mobile {
-  text-align: right;
+    text-align: right;
 }
 
 .close_this {
@@ -58,13 +58,14 @@ div.tab-content {
     text-align: start;
 }
 
-.main-footer{
+.main-footer {
     direction: ltr;
 }
 
-.dir_right{
+.dir_right {
     text-align: right;
 }
+
 .footer-bottom .footer-nav {
     text-align: right;
 }
@@ -80,6 +81,6 @@ div.tab-content {
 }
 
 .data_about_mobile i,
-.language_mobile i{
+.language_mobile i {
     margin-right: 2%;
 }

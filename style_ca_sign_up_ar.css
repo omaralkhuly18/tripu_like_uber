@@ -1,0 +1,20 @@
+.slide-controls .slider-tab {
+    right: 0;
+}
+
+#signup:checked~.slider-tab {
+    right: 50%;
+}
+
+.form-container .form-inner form{
+    text-align: start;
+}
+
+.form-inner form .field input{
+    padding-right: 30px;
+    padding-left: 0;
+}
+
+form .btn input[type="submit"]{
+    text-align: center;
+}
