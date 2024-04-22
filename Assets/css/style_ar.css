@@ -58,6 +58,10 @@ div.tab-content {
     text-align: start;
 }
 
+.userBox {
+    height: 390px;
+}
+
 .main-footer {
     direction: ltr;
 }
